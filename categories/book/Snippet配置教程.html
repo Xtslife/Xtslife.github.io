@@ -1,0 +1,494 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Smilelife">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www,xtslift.top">
+    <!--SEO-->
+
+    <meta name="keywords" content>
+
+
+    <meta name="description" content="主题特点
+原生JavaScript实现，去jQuery化
+样式支持CSS预处理器Less，方便主题自定义
+文章过期提醒功能
+文章阅读进度条
+网站公告功能
+首页图片懒加载
+首页文章缩略图自动检索文...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Smilelife</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Smilelife" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner2.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="genter">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 我若不坚强，谁替我勇敢 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www,xtslift.top">Smilelife</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/web/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/java/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/life/"><i class="fa "></i>生活</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/book/"><i class="fa "></i>文艺</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content ">
+                    <article class="post">
+    <h1 class="post-head"></h1>
+    <div class="post-body">
+        <h2 id="主题特点"><a href="#主题特点" class="headerlink" title="主题特点"></a>主题特点</h2><ul>
+<li>原生JavaScript实现，去jQuery化</li>
+<li>样式支持CSS预处理器Less，方便主题自定义</li>
+<li>文章过期提醒功能</li>
+<li>文章阅读进度条</li>
+<li>网站公告功能</li>
+<li>首页图片懒加载</li>
+<li>首页文章缩略图自动检索文章内图片，支持自动随机图片</li>
+<li>主题支持响应式</li>
+<li>支持3D云标签</li>
+<li>支持文章推送和文章打赏</li>
+<li>站内本地搜索和谷歌搜索</li>
+<li>支持多个第三方评论系统</li>
+<li>支持网站统计和不蒜子访客统计</li>
+<li>移动端的简洁设计</li>
+<li>支持代码高亮并支持自定义高亮样式</li>
+<li>支持Shell脚本通过Travis CI自动化部署Hexo博客</li>
+<li>支持Hexo自动化部署结果发送邮件和实时推送到钉钉</li>
+</ul>
+<h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a><strong>基础篇</strong></h1><blockquote>
+<p>如果你在此之前使用的是 <code>Hexo 2.x</code> 版本，为了避免未知的错误，请备份好数据，或者建立新的博客目录</p>
+</blockquote>
+<blockquote>
+<p>“主题目录” =&gt; <code>themes\hexo-theme-snippet</code>, “Hexo根目录” =&gt; 项目主目录; “主题配置” =&gt; <code>themes\hexo-theme-snippet\_config.yml</code>, “Hexo配置” =&gt; 项目主目录下<code>_config.yml</code></p>
+</blockquote>
+<h3 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1. 环境搭建"></a>1. 环境搭建</h3><p>需要<code>Node.js</code> 环境、<code>Git</code> 环境以及 <code>Hexo</code> ,如果你尚未安装或者不了解 <code>Hexo</code>，请参考 <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">官方教程</a> 进行了解以及安装。如果需要构建工具请自行安装，或使用本主题的Gulp方式。</p>
+<h3 id="2-下载主题"><a href="#2-下载主题" class="headerlink" title="2. 下载主题"></a>2. 下载主题</h3><p>有两种方式获取本主题–下载 <code>*.zip</code> 文件和通过 <code>git</code>方式：</p>
+<ol>
+<li>下载 <a href="https://github.com/shenliyang/hexo-theme-snippet" target="_blank" rel="noopener">Snippet主题</a> 文件解压后放在 <code>themes</code> 目录下，和博客中的landscape为同级目录</li>
+<li>Git方式，在Hexo根目录执行：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/shenliyang/hexo-theme-snippet.git themes/hexo-theme-snippet</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装主题插件"><a href="#3-安装主题插件" class="headerlink" title="3. 安装主题插件"></a>3. 安装主题插件</h3><p>因为 <strong>hexo-theme-snippet</strong> 使用了 <code>ejs</code> 模版引擎 、 <code>Less</code> CSS预编译语言以及在官方插件的基础上 进行功能的开发，以下为必装插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-renderer-ejs hexo-renderer-less hexo-deployer-git -S</span><br></pre></td></tr></table></figure>
+<h3 id="4-部署主题"><a href="#4-部署主题" class="headerlink" title="4. 部署主题"></a>4. 部署主题</h3><blockquote>
+<p>如果没有更改过主题源文件,也不需要代码优化可以跳过1,2,3步骤</p>
+</blockquote>
+<ol>
+<li>gulp打包构建，拷贝主题目录下<code>package.json</code>文件到Hexo根目录下，然后安装项目的开发依赖。 <a href="http://www.gulpjs.com.cn/docs/getting-started/" target="_blank" rel="noopener">Gulp入门指南</a></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i   //安装项目依赖</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在Hexo根目录下创建一个名为 gulpfile.js 的文件：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;./themes/hexo-theme-snippet/gulpfile&apos;);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>运行 gulp：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp 或者 gulp default   //执行打包任务</span><br></pre></td></tr></table></figure>
+<ol>
+<li>清空hexo静态文件和缓存，并重新生成</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g  //清空缓存并生成静态文件</span><br></pre></td></tr></table></figure>
+<ol>
+<li>本地预览，确没有问题再进行发布</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 4000 或者 hexo s  //启动本地服务默认</span><br></pre></td></tr></table></figure>
+<ol>
+<li>当gulp执行完成，并提示 <code>please execute： hexo d</code> 时，可以进行发布</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d 或者 gulp deploy  //部署发布</span><br></pre></td></tr></table></figure>
+<h3 id="5-更新主题"><a href="#5-更新主题" class="headerlink" title="5. 更新主题"></a>5. 更新主题</h3><p>主题可能会不定时优化和更新，更新主题代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/hexo-theme-snippet</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<h1 id="主题篇"><a href="#主题篇" class="headerlink" title="主题篇"></a><strong>主题篇</strong></h1><h3 id="1-主题配置"><a href="#1-主题配置" class="headerlink" title="1. 主题配置"></a>1. 主题配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br></pre></td><td class="code"><pre><span class="line">## menu -- 导航菜单显示&#123;[@page:名字,@url:地址,@icon:图标]&#125;</span><br><span class="line">menu:</span><br><span class="line">  - page: home</span><br><span class="line">    url: /</span><br><span class="line">    icon: fa-home</span><br><span class="line"></span><br><span class="line">## favicon -- 网站图标位置&#123;@favicon&#125;</span><br><span class="line">favicon: /favicon.ico</span><br><span class="line"></span><br><span class="line">## rss --rss文件位置&#123;@rss&#125;</span><br><span class="line">rss: /atom.xml</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 各个小工具的设置</span><br><span class="line"></span><br><span class="line">## widgets -- 6个左边小工具&#123;@widgets:[notification,category,archive,tagcloud,friends]&#125;</span><br><span class="line">widgets:</span><br><span class="line">  - search</span><br><span class="line">  - notification</span><br><span class="line">  - social</span><br><span class="line">  - category</span><br><span class="line">  - archive</span><br><span class="line">  - tagcloud</span><br><span class="line">  - friends</span><br><span class="line"></span><br><span class="line"># 各个小工具的设置</span><br><span class="line"></span><br><span class="line">## 搜索</span><br><span class="line">jsonContent:</span><br><span class="line">  searchLocal: true // 是否启用本地搜索</span><br><span class="line">  searchGoogle: true //是否启用谷歌搜索</span><br><span class="line">  posts:</span><br><span class="line">    title: true</span><br><span class="line">    text: true</span><br><span class="line">    content: true</span><br><span class="line">    categories: false</span><br><span class="line">    tags: false</span><br><span class="line"></span><br><span class="line">## notification config --网站公告设置,支持 html 和 纯文本</span><br><span class="line">notification: |-</span><br><span class="line">            &lt;p&gt;主题已经上线！欢迎下载或更新~ &lt;br/&gt;</span><br><span class="line">            主题下载：&lt;a href=&quot;https://github.com/shenliyang/hexo-theme-snippet&quot; title=&quot;fork me&quot; target=&quot;_blank&quot;&gt;Snippet主题&lt;/a&gt; &lt;br/&gt;</span><br><span class="line">            &lt;hr/&gt;接受贡献，包括不限于提交问题与需求，修复代码。欢迎Pull Request&lt;br/&gt;支持主题：&lt;a href=&quot;https://github.com/shenliyang/hexo-theme-snippet/stargazers&quot;&gt;Star一下&lt;/a&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">## 社交设置&#123;@name:社交工具名字，@icon:社交工具图标，@href:设置工具链接&#125; [参考图标](http://fontawesome.io/icons/)</span><br><span class="line">social:</span><br><span class="line">  - name: Github</span><br><span class="line">    icon: git</span><br><span class="line">    href: //github.com/shenliyang</span><br><span class="line"></span><br><span class="line">## 文章分类设置&#123;@cate_config:&#123;@show_count:是否显示数字，@show_current: 是否高亮当前category&#125;&#125;</span><br><span class="line">cate_config:</span><br><span class="line">   show_count: true</span><br><span class="line">   show_current: true</span><br><span class="line"></span><br><span class="line">## 文章归档设置&#123;@arch_config:/*参数参考：https://hexo.io/zh-cn/docs/helpers.html#list-archives*/&#125;</span><br><span class="line">## 推荐组合方式：[&#123;type: &apos;monthly&apos;,format: &apos;YYYY年MM月&apos;&#125;,&#123;type: &apos;yearly&apos;,format: &apos;YYYY年&apos;&#125;]</span><br><span class="line">arch_config:</span><br><span class="line">   type: &apos;monthly&apos;</span><br><span class="line">   format: &apos;YYYY年MM月&apos;</span><br><span class="line">   show_count: true</span><br><span class="line">   order: -1</span><br><span class="line"></span><br><span class="line">## 标签云设置&#123;/*参数参考：http://www.goat1000.com/tagcanvas-options.php */&#125;</span><br><span class="line">tagcloud:</span><br><span class="line">  tag3d: false // 是否启用3D标签云</span><br><span class="line">  textColour: &apos;#444&apos; // 字体颜色</span><br><span class="line">  outlineMethod: &apos;block&apos; // 选中模式(outline|classic|block|colour|size|none)</span><br><span class="line">  outlineColour: &apos;#FFDAB9&apos; // 选中模式的颜色</span><br><span class="line">  interval: 30 // 动画帧之间的时间间隔，值越大，转动幅度越大</span><br><span class="line">  freezeActive: true // 选中的标签是否继续滚动</span><br><span class="line">  frontSelect: true // 不选标签云后部的标签</span><br><span class="line">  reverse: true // 是否反向触发</span><br><span class="line">  wheelZoom: false // 是否启用鼠标滚轮</span><br><span class="line"></span><br><span class="line">## 友链设置&#123;@链接名称：链接地址&#123;@links:[,,,]&#125;&#125;</span><br><span class="line">links:</span><br><span class="line">  - Hexo官网: https://hexo.io/zh-cn/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 主题自定义个性化配置</span><br><span class="line"></span><br><span class="line">## 网站宣传语&#123;@branding：网站宣传语(不设置显示本地图片)&#125;</span><br><span class="line">branding: 从未如此简单有趣</span><br><span class="line"></span><br><span class="line">## 设置banner背景图片&#123;@img:自定义图片地址(支持绝对和相对路径),主题默认&#123;&quot;静态背景&quot;:&quot;banner.jpg&quot;&#125;,&#123;&quot;动态背景&quot;:&quot;banner2.jpg&quot;&#125;,&#123;&quot;动态星空背景&quot;:&quot;banner3.jpg&quot;&#125;&#125;</span><br><span class="line">## 例如：http://snippet.shenliyang.com/img/banner|2|3.jpg, 或者 &apos;./img/banner-img.jpg&apos;(相对本地资源地址)</span><br><span class="line">banner:</span><br><span class="line">  img: http://snippet.shenliyang.com/img/banner.jpg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 设置carousel&#123;@img:图片地址,@url:点击跳转链接(默认值:&quot;javascript:&quot;)&#125;</span><br><span class="line">carousel:</span><br><span class="line">  img: &apos;img/head-img.jpg&apos;</span><br><span class="line">  url: &apos;javascript:&apos;</span><br><span class="line"></span><br><span class="line">## 首页列表底部面板&#123;@homePanel: 是否开启&#125;</span><br><span class="line">homePanel: true</span><br><span class="line"></span><br><span class="line">## 首页文章列表缩略图</span><br><span class="line">### 加载规则: 自定义文章缩略图(在Front-matter中添加的&apos;img&apos;字段) &gt; 文章内的图片 &gt; defaultImgs(随机获取) &gt; 无图模式列表</span><br><span class="line"></span><br><span class="line">## 自定义随机图片</span><br><span class="line">defaultImgs:</span><br><span class="line">  - http://www.example.jpg //远程图片链接示例</span><br><span class="line">  - /img/default-1.jpg //本地图片链接示例</span><br><span class="line"></span><br><span class="line">### 文章摘要&#123;@摘要显示优先级：自定义摘要 &gt; 自动截取摘要 &#125;</span><br><span class="line">### 自定义摘要范围&#123;@&lt;!--more--&gt;:截取more之前的内容为摘要&#125;</span><br><span class="line">### 自动截取摘要&#123;@excerptLength:自动截取文章前多少个字为摘要，不配置默认：120字&#125;</span><br><span class="line">excerptLength: 120</span><br><span class="line"></span><br><span class="line">## 是否开启文章目录</span><br><span class="line">toc: true</span><br><span class="line"></span><br><span class="line">## 代码高亮配置&#123;@highlightTheme: 主题名称,(配置暂时不可用，后续开发中…)&#125;</span><br><span class="line"></span><br><span class="line">highlightTheme: default //TODO</span><br><span class="line"></span><br><span class="line">## 文章过期提醒功能 &#123;@warning:&#123;days:临界天数(默认300天,设置0关闭功能),text:提醒文字/*%d为过期总天数占位符*/&#125;&#125;</span><br><span class="line">warning:</span><br><span class="line">  days: 300</span><br><span class="line">  text: &apos;本文于%d天之前发表，文中内容可能已经过时。&apos;</span><br><span class="line"></span><br><span class="line">## 文章内声明&#123;@declaration: &#123;enable:是否开启,title:声明标题,tip:提示内容&#125;&#125;</span><br><span class="line">declaration:</span><br><span class="line">  enable: true</span><br><span class="line">  title: &apos;转载声明&apos;</span><br><span class="line">  tip: |-</span><br><span class="line">      商业转载请联系作者获得授权,非商业转载请注明出处 © &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;Snippet&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">## 文章打赏&#123;@reward: &#123;alipay:支付宝打赏,wepay:微信打赏,tip:打赏提示语; 链接都为空,关闭打赏功能&#125;&#125;</span><br><span class="line">reward:</span><br><span class="line">  alipay: &apos;&apos;</span><br><span class="line">  wepay: &apos;../img/reward-wepay.jpg&apos;</span><br><span class="line">  tip: 赞赏是不耍流氓的鼓励</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 主题评论</span><br><span class="line"></span><br><span class="line">### gitment</span><br><span class="line">gitment:</span><br><span class="line">  enable: false</span><br><span class="line">  owner:</span><br><span class="line">  repo:</span><br><span class="line">  client_id:</span><br><span class="line">  client_secret:</span><br><span class="line">  labels:</span><br><span class="line">  perPage:</span><br><span class="line">  maxCommentHeight:</span><br><span class="line"></span><br><span class="line">### 来必力(默认选项)</span><br><span class="line">livere:</span><br><span class="line">  enable: true</span><br><span class="line">  livere_uid:</span><br><span class="line"></span><br><span class="line">### 友言评论(服务不稳定，经常无法加载)</span><br><span class="line">uyan:</span><br><span class="line">  enable: false</span><br><span class="line">  uyan_id:</span><br><span class="line"></span><br><span class="line">### Disqus评论(需要翻墙，或者搭建代理)</span><br><span class="line">disqus:</span><br><span class="line">  enable: false</span><br><span class="line">  shortname: snippet</span><br><span class="line">  count: false</span><br><span class="line"></span><br><span class="line">### 畅言评论(需要ICP备案)</span><br><span class="line">changyan:</span><br><span class="line">  enable: false</span><br><span class="line">  appid:</span><br><span class="line">  conf:</span><br><span class="line"></span><br><span class="line">### Valine评论 参考网站: [valine评论](https://valine.js.org/)</span><br><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appId:</span><br><span class="line">  appKey:</span><br><span class="line">  placeholder: 说点什么吧</span><br><span class="line">  notify: false // 邮件通知</span><br><span class="line">  verify: false // 验证码</span><br><span class="line">  avatar: mm // avatar头像</span><br><span class="line">  meta: nick,mail // 输入框内容，可选值nick,mail,link</span><br><span class="line">  pageSize: 10</span><br><span class="line"></span><br><span class="line">## Gitalk评论 参考网站: [一个基于Github Issue和Preact开发的评论插件](https://gitalk.github.io/)</span><br><span class="line">gitalk:</span><br><span class="line">   enable: false</span><br><span class="line">   clientID: &quot;&quot; // Github 应用ID</span><br><span class="line">   clientSecret: &quot;&quot; // Github 应用密钥</span><br><span class="line">   repo: &quot;hexo-theme-snippet&quot; // 存储你评论 issue 的 Github 仓库名（建议直接用 GitHub Page 的仓库名），注：只写仓库名称，不写完整地址，比如：hexo-theme-snippet, 而不是 https://github.com/shenliyang/hexo-theme-snippet</span><br><span class="line">   owner: shenliyang  // Github 用户名(github登录时用的名称)</span><br><span class="line">   admin: shenliyang // 这个仓库的管理员，可以有多个，用数组表示，一般写自己用户名即可</span><br><span class="line">   perPage: 10 //每次加载的数据大小，最多100</span><br><span class="line">   id: &quot;&quot; // 如果为值&quot;location.pathname&quot;不建议填写(除非你有更好的方式)，由于id字段限制长度为50字符，默认为空时主题会进行判断处理。</span><br><span class="line"></span><br><span class="line">## 网站访客统计 [不蒜子统计](http://busuanzi.ibruce.info/)</span><br><span class="line">visit_counter:</span><br><span class="line">   site: true // 总访问量和访问人数统计</span><br><span class="line">   page: true // 文章阅读量统计</span><br><span class="line"></span><br><span class="line">## 网站访问统计</span><br><span class="line"></span><br><span class="line">### 网盟CNZZ统计 参考网站: [网盟CNZZ](http://www.umeng.com/)</span><br><span class="line">cnzz_anaylytics:</span><br><span class="line"></span><br><span class="line">### 百度统计 参考网站: [百度统计](https://tongji.baidu.com/)</span><br><span class="line">baidu_anaylytics:</span><br><span class="line"></span><br><span class="line">### 谷歌统计 参考网站：[谷歌统计](https://www.google-analytics.com/)</span><br><span class="line">google_anaylytics:</span><br><span class="line"></span><br><span class="line">### 腾讯分析 参考网站：[腾讯分析](http://ta.qq.com/)</span><br><span class="line">tencent_analytics:</span><br><span class="line"></span><br><span class="line">### 百度站点认证</span><br><span class="line">baidu-site-verification:</span><br><span class="line"></span><br><span class="line">### 百度自动推送(@baidu_push: 是否启用百度自动推送)  参考网站: [百度站长资源](https://ziyuan.baidu.com/college/courseinfo?id=267&amp;page=2#h2_article_title18)</span><br><span class="line">baidu_push:</span><br><span class="line"></span><br><span class="line">## ICON配置 (不配则启用本地Font Icon)</span><br><span class="line">fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css</span><br><span class="line"></span><br><span class="line">## 网站主题配置</span><br><span class="line">since: 2017  //建站时间</span><br><span class="line">robot: &apos;all&apos;  //控制搜索引擎的抓取和索引编制行为，默认为all</span><br><span class="line">version: 1.2.1  //当前主题版本号</span><br></pre></td></tr></table></figure>
+<h3 id="主题使用技巧及功能扩展"><a href="#主题使用技巧及功能扩展" class="headerlink" title="主题使用技巧及功能扩展"></a>主题使用技巧及功能扩展</h3><ol>
+<li>修改新增文章Front-matter模板,修改<code>scaffolds</code>目录下的<code>post.md</code>模板</li>
+</ol>
+<blockquote>
+<p>模板文件内部不要保留注释部分,关键词后面请使用英文冒号</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125; // 标题</span><br><span class="line">date: &#123;&#123; date &#125;&#125;   // 时间</span><br><span class="line">categories: [&apos;分类1&apos;,&apos;分类2&apos;] // 分类</span><br><span class="line">tags: [&apos;标签1&apos;,&apos;标签2&apos;]       // 标签</span><br><span class="line">comments: false    // 是否开启评论</span><br><span class="line">img:               // 自定义缩略图</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ol>
+<li>启用站内本地搜索功能</li>
+</ol>
+<p>如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content@2.2.0 -S</span><br></pre></td></tr></table></figure>
+<p>然后修改主题配置_config.yml文件下<code>jsonContent</code>相关参数。</p>
+<h1 id="提升篇"><a href="#提升篇" class="headerlink" title="提升篇"></a><strong>提升篇</strong></h1><h2 id="1-Travis-CI-介绍"><a href="#1-Travis-CI-介绍" class="headerlink" title="1. Travis CI 介绍"></a>1. Travis CI 介绍</h2><p>CI即持续集成系统。对个人而言，就是让你的代码在提交到远程(这里是GitHub)，立即自动编译，自动化测试、自动部署等。</p>
+<p>不需要在担心更换电脑时，还要从新部署环境的问题，只要你能向远程推送文章，其他的事情就都可以交给Travis CI处理就ok了。</p>
+<h2 id="2-Travis-CI-使用"><a href="#2-Travis-CI-使用" class="headerlink" title="2. Travis CI 使用"></a>2. Travis CI 使用</h2><blockquote>
+<p>默认前提是已经通过Github进行授权登录Travis网站，并关联了GitHub上的仓库和相关配置。</p>
+</blockquote>
+<ol>
+<li>拷贝主题下的<code>gulpfile.js</code> <code>travis.yml</code> <code>travis.sh</code> 到项目根目录</li>
+<li>配置travis.yml 文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">language: node_js #使用Node语言环境</span><br><span class="line">node_js: stable #安装稳定版Node</span><br><span class="line"></span><br><span class="line">sudo: false</span><br><span class="line"></span><br><span class="line">#cache 启用缓存，加快构建速度</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">    - &quot;node_modules&quot;</span><br><span class="line"></span><br><span class="line">notifications: #启用通知</span><br><span class="line">  email:</span><br><span class="line">    recipients:</span><br><span class="line">      - snippet@91h5.cc #接收构建消息的邮件 不需要可设置为false</span><br><span class="line">    on_success: never #部署成功时，可设置alway never change</span><br><span class="line">    on_failure: always #部署失败时，同上</span><br><span class="line"></span><br><span class="line"># S: Build Lifecycle</span><br><span class="line">install:</span><br><span class="line">  - npm install  #安装依赖</span><br><span class="line"></span><br><span class="line">before_script:</span><br><span class="line">  - export TZ=&apos;Asia/Shanghai&apos; #设置时区</span><br><span class="line">  - npm install -g gulp  #全局安装Gulp</span><br><span class="line">  - chmod +x _travis.sh  #授权脚本执行权限</span><br><span class="line"></span><br><span class="line">script:</span><br><span class="line">  - hexo clean &amp;&amp; hexo g #清除缓存并生成静态文件</span><br><span class="line">  - gulp #执行gulp任务</span><br><span class="line"></span><br><span class="line">after_success: #执行成功时(以后扩展功能使用)</span><br><span class="line"></span><br><span class="line">after_script:</span><br><span class="line">  - ./_travis.sh #执行部署脚本</span><br><span class="line"># E: Build LifeCycle</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - dev #需要监听部署的分支</span><br><span class="line">env:</span><br><span class="line">  global:</span><br><span class="line">   - GH_REF: github.com/shenliyang/shenliyang.github.io.git #更改为自己git地址</span><br></pre></td></tr></table></figure>
+<ol>
+<li>提交代码到Github，实现自动部署</li>
+<li>当 <code>.travis.yml</code>配置文件修改完成后，将其提交到远程仓库的 hexo 分支下，此时如果之前的配置一切ok，我们应该能在 Travis CI 的博客项目主页页面中看到自动构建已经在开始执行了。上面会显示出构建过程中的日志信息及状态等。</li>
+</ol>
+<h2 id="3-主题开发"><a href="#3-主题开发" class="headerlink" title="3. 主题开发"></a>3. 主题开发</h2><p>Gulp 执行启用主题开发模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp dev</span><br></pre></td></tr></table></figure>
+<p>会监听样式less或者JS文件的变动。然后执行上面的【主题发布】即可。</p>
+<h3 id="运行预览"><a href="#运行预览" class="headerlink" title="运行预览"></a>运行预览</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s -p 4000</span><br></pre></td></tr></table></figure>
+<p>监听4000端口，使用浏览器打开地址<code>http://localhost:4000</code>进行预览。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a><strong>其他</strong></h1><h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>在设计这款主题的时候参考了好多主题和博客的设计和创意，深表感谢！</p>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><p>接受各种形式的贡献，包括但不限于提交问题或需求，修复代码。 欢迎大家提Issue或者Pull Request。</p>
+<p>如果觉得本主题还不错，== 欢迎 <a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers" target="_blank" rel="noopener">Star</a>下 ==，您的支持和鼓励才是后续更新最大的动力</p>
+<h2 id="宗旨"><a href="#宗旨" class="headerlink" title="宗旨"></a>宗旨</h2><p>主题宗旨：<strong>致力主题简洁轻量，配置方便开箱即用</strong>，该主题项目会持续维护和更新，不会跑路，请放心使用。</p>
+<blockquote>
+<p>Hexo框架追求的是快速、简洁，高效。喜欢绚丽，添加各种功能，折腾的朋友，建议移步至：<a href="https://cn.wordpress.org/" target="_blank" rel="noopener">wordpress官网</a></p>
+</blockquote>
+<h2 id="你不知道的提Issues技巧"><a href="#你不知道的提Issues技巧" class="headerlink" title="你不知道的提Issues技巧"></a>你不知道的提Issues技巧</h2><blockquote>
+<p>强烈推荐阅读 <a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way" target="_blank" rel="noopener">《提问的智慧》</a>、<a href="https://github.com/seajs/seajs/issues/545" target="_blank" rel="noopener">《如何向开源社区提问题》</a> 和 <a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs-cn.html" target="_blank" rel="noopener">《如何有效地报告 Bug》</a>、<a href="https://zhuanlan.zhihu.com/p/25795393" target="_blank" rel="noopener">《如何向开源项目提交无法解答的问题》</a>，更好的问题更容易获得帮助。</p>
+</blockquote>
+<p><strong>* 已阅读以上文章，并知晓，可以 </strong><a href="https://github.com/shenliyang/hexo-theme-snippet/issues/new" target="_blank" rel="noopener">提Issues</a> 了。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h4 id="1-搜索功能不能用，content-json文件找不到？"><a href="#1-搜索功能不能用，content-json文件找不到？" class="headerlink" title="1. 搜索功能不能用，content.json文件找不到？"></a>1. 搜索功能不能用，content.json文件找不到？</h4><p>需要安装hexo-generator-json-content插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content@2.2.0 -S</span><br></pre></td></tr></table></figure>
+<h4 id="2-谷歌搜索没有响应？"><a href="#2-谷歌搜索没有响应？" class="headerlink" title="2. 谷歌搜索没有响应？"></a>2. 谷歌搜索没有响应？</h4><p>如果使用谷歌搜索没有响应，确定是否已经科学上网</p>
+<h4 id="3-怎么设置首页文章缩略图自动检索文章内图片？"><a href="#3-怎么设置首页文章缩略图自动检索文章内图片？" class="headerlink" title="3. 怎么设置首页文章缩略图自动检索文章内图片？"></a>3. 怎么设置首页文章缩略图自动检索文章内图片？</h4><p>首页文章缩略图加载规则: 自定义文章缩略图 &gt; 自动检索文章内的图片 &gt; defaultImgs(随机获取) &gt; 无图模式列表</p>
+<p>在<code>Front-matter</code>中： 指定img变量 -&gt; 为固定缩略图 不指定img变量 -&gt; 自动检索文章内的图片</p>
+<h4 id="4-在url哪里可以访问到本地静态文件吗？"><a href="#4-在url哪里可以访问到本地静态文件吗？" class="headerlink" title="4. 在url哪里可以访问到本地静态文件吗？"></a>4. 在url哪里可以访问到本地静态文件吗？</h4><p>在主题 <code>source</code> 目录下新建文件夹，例如: <code>static</code>文件夹，然后添加静态资源，例如: xxx.pdf文件， 访问：<em><a href="http://yoursite.com/static/xxx.pdf" target="_blank" rel="noopener">http://yoursite.com/static/xxx.pdf</a></em></p>
+<h4 id="5-这个主题有分页功能吗？"><a href="#5-这个主题有分页功能吗？" class="headerlink" title="5. 这个主题有分页功能吗？"></a>5. 这个主题有分页功能吗？</h4><p>主题已经集成分页功能，在Hexo配置中修改</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>per_page</td>
+<td>每页显示的文章量 (0 = 关闭分页功能)</td>
+<td>10</td>
+</tr>
+<tr>
+<td>pagination_dir</td>
+<td>分页目录</td>
+<td>page</td>
+</tr>
+</tbody>
+</table>
+<h4 id="6-为什么右侧小工具标题都为英文呢？"><a href="#6-为什么右侧小工具标题都为英文呢？" class="headerlink" title="6. 为什么右侧小工具标题都为英文呢？"></a>6. 为什么右侧小工具标题都为英文呢？</h4><p>可能是您忘记预设网站语言，而启用默认语言了，请先在Hexo配置中调整 language 设定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN</span><br></pre></td></tr></table></figure>
+<h4 id="7-关于Hexo标签和分类方法的分歧"><a href="#7-关于Hexo标签和分类方法的分歧" class="headerlink" title="7. 关于Hexo标签和分类方法的分歧"></a>7. 关于Hexo标签和分类方法的分歧</h4><blockquote>
+<p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p>
+</blockquote>
+<p>如果您有过使用WordPress的经验，就很容易误解Hexo的分类方式。WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- Diary</span><br><span class="line">- Life</span><br></pre></td></tr></table></figure>
+<p>会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+<p>Hexo官方文档: <a href="https://hexo.io/zh-cn/docs/front-matter#%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">分类方法的分歧</a></p>
+<blockquote>
+<p>没有找到你需要的问题解决方案，建议阅读<a href="https://github.com/shenliyang/hexo-theme-snippet#%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%8F%90Issues%E6%8A%80%E5%B7%A7" target="_blank" rel="noopener">《你不知道的提Issues技巧》</a> 再提Issues。</p>
+</blockquote>
+
+    </div>
+</article>
+                </main>
+                
+                    
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+        <h3 class="title">网站公告</h3>
+        <div class="notification">
+            <p>
+    我若不坚强，谁替我勇敢<br>
+    心若向阳，无畏悲伤
+</p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/xtslife" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="mailto:gszygtgt@163.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
+			    	<i class="qq fa fa-qq"></i>
+			    </a>
+            
+	            <a href="/" rel="external nofollow" title="微信" target="_blank">
+			    	<i class="weixin fa fa-weixin"></i>
+			    </a>
+            
+	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+			    	<i class="feed fa fa-feed"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+
+        
+        
+    <div class="widget">
+        <h3 class="title">归档</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/"><i class="fa" aria-hidden="true">2019年04月</i></a><span class="archive-list-count">1</span></li></ul>
+    </div>
+
+
+        
+        
+
+        
+        
+    <div class="widget">
+        <h3 class="title">友链</h3>
+        <div class="content friends-link">
+        
+            <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">Hexo官网</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: false || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
