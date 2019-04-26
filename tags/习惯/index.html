@@ -19,20 +19,7 @@
     <meta name="keywords" content>
 
 
-    <meta name="description" content="微信小程序的五个版本
-
-预览版本
-开发版本
-体验版本
-审核版本
-线上版本
-
-开发者ID：wx22a6116c2c607dd5
-demo
-基本文件结构
-CSS的使用限制
-自适应单位rpx
-全局样式...">
+    <meta name="description" content>
 
 
 
@@ -44,7 +31,7 @@ CSS的使用限制
     <!--Title-->
 
 
-<title>Smilelife</title>
+<title>标签: 习惯 | Smilelife</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Smilelife" type="application/atom+xml">
@@ -98,7 +85,7 @@ CSS的使用限制
         <div class="branding">
         	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
             
-                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+                <h2> 我若不坚强，谁替我勇敢 </h2>
             
     	</div>
     </div>
@@ -133,7 +120,7 @@ CSS的使用限制
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/categories/literature /"><i class="fa "></i>文艺</a>
+                                <a href="/categories/literature/"><i class="fa "></i>文艺</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -150,202 +137,48 @@ CSS的使用限制
         <div class="container">
             <div class="row">
                 <main class="col-md-8 main-content ">
-                    <article class="post">
-    <h1 class="post-head"></h1>
-    <div class="post-body">
-        <p>微信小程序的五个版本</p>
-<ul>
-<li>预览版本</li>
-<li>开发版本</li>
-<li>体验版本</li>
-<li>审核版本</li>
-<li>线上版本</li>
-</ul>
-<p>开发者ID：wx22a6116c2c607dd5</p>
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><ul>
-<li>基本文件结构</li>
-<li>CSS的使用限制</li>
-<li>自适应单位rpx</li>
-<li>全局样式</li>
-<li>App.json配置文件</li>
-<li>Flex布局等</li>
-</ul>
-<p>根目录下有三个文件app.js app.json app.wxss，一个小程序项目必须有这三个描述App的文件。</p>
-<p>注意：必须放在应用程序的根目录</p>
-<table>
-<thead>
-<tr>
-<th>文件</th>
-<th>必填</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>app.js</td>
-<td>是</td>
-<td>小程序逻辑文件</td>
-</tr>
-<tr>
-<td>app.json</td>
-<td>是</td>
-<td>小程序配置文件</td>
-</tr>
-<tr>
-<td>app.wxss</td>
-<td>否</td>
-<td>全局公共样式文件</td>
-</tr>
-</tbody>
-</table>
-<p>一个小程序由若干个页面文件构成，每个页面可由四个文件构成，分别是,js .wxml .wxss .json文件</p>
-<table>
-<thead>
-<tr>
-<th>文件类型</th>
-<th>必填</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>js</td>
-<td>是</td>
-<td>页面逻辑</td>
-</tr>
-<tr>
-<td>wxml</td>
-<td>是</td>
-<td>页面结构</td>
-</tr>
-<tr>
-<td>wxss</td>
-<td>否</td>
-<td>页面样式表</td>
-</tr>
-<tr>
-<td>json</td>
-<td>否</td>
-<td>页面配置</td>
-</tr>
-</tbody>
-</table>
-<p>开发注意：</p>
-<ul>
-<li>要显示页面，必须让小程序的框架知道这个页面的存在，以及这个页面的具体位置。</li>
-<li>页面的JS文件是不可以完全为空的，否则小程序会报错</li>
-<li>页面的json文件同样不能为空</li>
-<li>创建页面的快捷方式：如果app.json文件下的pages数组里的页面路径，指向的是一个不存在的文件，那么MINA框架会自动创建这个页面的四个文件。</li>
-</ul>
-<p>组件：</p>
-<ul>
-<li>view作为容器来使用类似于HTML中的div标签</li>
-<li>text组件用来显示一段文本</li>
-<li>image组件用来显示一张图片</li>
-</ul>
-<p>想对路径和绝对路径：</p>
-<ul>
-<li>绝对路径以“/‘’开头，””/“代表根目录</li>
-<li>相对路径，路径中../表示向上一级</li>
-</ul>
-<p>图片的存放：</p>
-<ul>
-<li>真实项目中，图片资源尽量不要存储在小程序的项目中，因为小程序的大小不能超过1MB。应该将图片存放你在服务器上，让小程序通过网络来加载图片资源。</li>
-</ul>
-<p>小程序所支持的CSS选择器</p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>样例</th>
-<th>样例描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.class</td>
-<td>.sample</td>
-<td>选择所有拥有class=”sample”的组件</td>
-</tr>
-<tr>
-<td>#id</td>
-<td>#sample</td>
-<td></td>
-</tr>
-<tr>
-<td>element</td>
-<td>view</td>
-<td>选择所有view的组件</td>
-</tr>
-<tr>
-<td>::after</td>
-<td>view::after</td>
-<td>在view组件后边插入内容</td>
-</tr>
-<tr>
-<td>::before</td>
-<td>view::before</td>
-<td>在view组件前边插入内容</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>本地资源在wxss中是无法使用的。</li>
-</ul>
-<p>Flex布局</p>
-<ul>
-<li>W3C提出</li>
-<li>让页面布局更加简单，很好的支持响应式布局。</li>
-<li>Flex也成为弹性布局，主要作用在容器上。</li>
-<li>设置display:flex是应用一切弹性布局属性的先决条件。</li>
-<li>flex-direction这个属性指定view内元素的排列方向。 确定主轴方向<ul>
-<li>row：主轴水平，方向为自左向右</li>
-<li>column：主轴水平，方向为自右向左</li>
-<li>row-reverse：主轴垂直，方向自上而下</li>
-<li>column-reverse：主轴垂直，方向自下而上</li>
-</ul>
-</li>
-</ul>
-<p>iphoone6的尺寸下设计：</p>
-<ul>
-<li>1物理像素=1rpx=0.5px<ul>
-<li>逻辑像素pt       </li>
-<li>物理像素px</li>
-</ul>
-</li>
-</ul>
-<p>以iphone6为例，模拟器理给出的分辨率是375x667; Dpr:2</p>
-<p>iphone6的水平方向有375个逻辑像素点，而竖直方向有667个逻辑像素点，每个逻辑像素点包含2个物理像素点。</p>
-<p>page代表着整个页面的容器，如果想对页面整体做样式或者属性设置，name应该考虑page这个页面的根元素。</p>
-<p>window配置项可用来设置小程序的状态栏、导航栏、标题和窗口的背景色。</p>
-<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON:"></a>JSON:</h3><ul>
-<li><p><a href="https://baike.baidu.com/item/JavaScript" target="_blank" rel="noopener">- JavaScript</a> Object Notation, JS 对象简谱 ,是一种<strong>轻量级的数据交换格式。</strong></p>
-</li>
-<li><p>采用完全独立于编程语言的文本格式来存储和表示数据。</p>
-</li>
-</ul>
-<h5 id="JSON语法规则："><a href="#JSON语法规则：" class="headerlink" title="JSON语法规则："></a>JSON语法规则：</h5><ul>
-<li><h6 id="对象表示为键值对"><a href="#对象表示为键值对" class="headerlink" title="对象表示为键值对"></a>对象表示为键值对</h6></li>
-<li>数据由逗号分隔</li>
-<li>花括号保存对象</li>
-<li>方括号保存数组</li>
-</ul>
-<h5 id="JSON-键-值对"><a href="#JSON-键-值对" class="headerlink" title="JSON 键/值对"></a>JSON 键/值对</h5><ul>
-<li>JSON 键值对是用来保存 JS 对象的一种方式，和 JS 对象的写法也大同小异，键/值对组合中的键名写在前面并用双引号 “” 包裹，使用冒号 : 分隔，然后紧接着值：</li>
-</ul>
-<h5 id="JSON-与-JS-对象的关系"><a href="#JSON-与-JS-对象的关系" class="headerlink" title="JSON 与 JS 对象的关系"></a>JSON 与 JS 对象的关系</h5><ul>
-<li><p>很多人搞不清楚 JSON 和 Js 对象的关系，甚至连谁是谁都不清楚。其实，可以这么理解：</p>
-</li>
-<li><p>JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象的信息，本质是一个字符串。</p>
-</li>
-</ul>
+                    <ol class="breadcrumb">
+    
+    
+        <li>
+            习惯
+        </li>
+    
+    
 
-    </div>
-</article>
+</ol>
+
+
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2019/04/26/穷查理宝典/">穷查理宝典</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime title>
+                        2019年04月26日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    
+​    查理·芒格（Charlie Thomas Munger，1924年1月1日—）美国投资家，沃伦·巴菲特的黄金搭档，伯克夏·哈撒韦公司的副主席。
+​    查理·芒格(Charlie Thomas Munger)，出生于美国内布拉斯加州的奥马哈。这位今年...
+                
+            </p>
+        </div>
+    </article>
+ 
+
+
+
+
+
+
+
                 </main>
                 
                     
@@ -382,11 +215,15 @@ CSS的使用限制
         
         
     <div class="widget">
-        <h3 class="title">网站公告</h3>
+        <h3 class="title">小白板</h3>
         <div class="notification">
-            <p>
+            <p style="color:#B87333;font-size:16px" align="center">        
+    <img src="http://bmob-cdn-25248.b0.upaiyun.com/2019/04/26/a1233091405fd43c805d09b3ba8cf070.jpg"><br>        
+    关小涛 <br>              
+    心若向阳，无畏悲伤<br>
     我若不坚强，谁替我勇敢<br>
-    心若向阳，无畏悲伤
+    企鹅：710612280<br>
+    微信：x7752301<br>   
 </p>
         </div>
     </div>
@@ -425,7 +262,7 @@ CSS的使用限制
         
     <div class="widget">
         <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/"><i class="fa" aria-hidden="true">编程</i></a><span class="category-list-count">1</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/literature/"><i class="fa" aria-hidden="true">文艺</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/"><i class="fa" aria-hidden="true">编程</i></a><span class="category-list-count">1</span></li></ul>
     </div>
 
 
@@ -444,7 +281,7 @@ CSS的使用限制
     <div class="content tag-cloud">
         
             <canvas width="300" height="300" id="tag-cloud-3d">
-                <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
+                <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/习惯/" style="font-size: 10px;">习惯</a> <a href="/tags/投资/" style="font-size: 10px;">投资</a> <a href="/tags/查理·芒格/" style="font-size: 10px;">查理·芒格</a> <a href="/tags/理财/" style="font-size: 10px;">理财</a>
             </canvas>
         
     </div>
@@ -457,7 +294,13 @@ CSS的使用限制
         <h3 class="title">友链</h3>
         <div class="content friends-link">
         
-            <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">Hexo官网</a>
+            <a href="https://hexo.io/zh-cn" class="fa" target="_blank">Hexo官网</a>
+        
+            <a href="https://www.cnblogs.com/XtsLife" class="fa" target="_blank">博客园</a>
+        
+            <a href="https://blog.csdn.net/qq_39654866" class="fa" target="_blank">CSDN</a>
+        
+            <a href="http://www.gequdaquan.net/gqss" class="fa" target="_blank">听歌必备</a>
         
         </div>
     </div>
@@ -504,7 +347,7 @@ CSS的使用限制
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2019
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
@@ -528,7 +371,7 @@ CSS的使用限制
             textColour: '#444', // 字体颜色
             outlineMethod: 'block', // 选中模式
             outlineColour: '#FFDAB9', // 选中模式的颜色
-            interval: 30 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            interval: 25 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
             textHeight: 13,
             outlineRadius: 3,
             freezeActive: true || '', // 选中的标签是否继续滚动
