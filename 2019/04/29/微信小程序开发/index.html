@@ -1,0 +1,494 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Smilelife">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www,xtslift.top">
+    <!--SEO-->
+
+    <meta name="keywords" content="微信,小程序,开发">
+
+
+    <meta name="description" content="
+微信小程序的五个版本
+预览版本
+开发版本
+体验版本
+审核版本
+线上版本
+
+开发者ID：wx22a6116c2c607dd5
+demo
+基本文件结构
+CSS的使用限制
+自适应单位rpx
+全局样式...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>微信小程序开发 | Smilelife</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Smilelife" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="关小涛">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www,xtslift.top">Smilelife</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>主页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/programming/"><i class="fa "></i>编程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/life/"><i class="fa "></i>生活</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/literature/"><i class="fa "></i>文艺</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="微信小程序开发">
+            
+	            微信小程序开发
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/programming/">编程</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/小程序/">小程序</a> <a class="tag-link" href="/tags/开发/">开发</a> <a class="tag-link" href="/tags/微信/">微信</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/29</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="https://www.lifeofpix.com/wp-content/uploads/2019/03/DSC03156-1600x1067.jpg" alt></p>
+<h4 id="微信小程序的五个版本"><a href="#微信小程序的五个版本" class="headerlink" title="微信小程序的五个版本"></a>微信小程序的五个版本</h4><ul>
+<li>预览版本</li>
+<li>开发版本</li>
+<li>体验版本</li>
+<li>审核版本</li>
+<li>线上版本</li>
+</ul>
+<p>开发者ID：wx22a6116c2c607dd5</p>
+<h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><ul>
+<li>基本文件结构</li>
+<li>CSS的使用限制</li>
+<li>自适应单位rpx</li>
+<li>全局样式</li>
+<li>App.json配置文件</li>
+<li>Flex布局等</li>
+</ul>
+<p>根目录下有三个文件app.js app.json app.wxss，一个小程序项目必须有这三个描述App的文件。</p>
+<p>注意：必须放在应用程序的根目录</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app.js</td>
+<td>是</td>
+<td>小程序逻辑文件</td>
+</tr>
+<tr>
+<td>app.json</td>
+<td>是</td>
+<td>小程序配置文件</td>
+</tr>
+<tr>
+<td>app.wxss</td>
+<td>否</td>
+<td>全局公共样式文件</td>
+</tr>
+</tbody>
+</table>
+<h4 id="页面构成该文件"><a href="#页面构成该文件" class="headerlink" title="页面构成该文件"></a>页面构成该文件</h4><p>一个小程序由若干个页面文件构成，每个页面可由四个文件构成，分别是,js .wxml .wxss .json文件</p>
+<table>
+<thead>
+<tr>
+<th>文件类型</th>
+<th>必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>js</td>
+<td>是</td>
+<td>页面逻辑</td>
+</tr>
+<tr>
+<td>wxml</td>
+<td>是</td>
+<td>页面结构</td>
+</tr>
+<tr>
+<td>wxss</td>
+<td>否</td>
+<td>页面样式表</td>
+</tr>
+<tr>
+<td>json</td>
+<td>否</td>
+<td>页面配置</td>
+</tr>
+</tbody>
+</table>
+<h5 id="开发注意："><a href="#开发注意：" class="headerlink" title="开发注意："></a>开发注意：</h5><ul>
+<li>要显示页面，必须让小程序的框架知道这个页面的存在，以及这个页面的具体位置。</li>
+<li>页面的JS文件是不可以完全为空的，否则小程序会报错</li>
+<li>页面的json文件同样不能为空</li>
+<li>创建页面的快捷方式：如果app.json文件下的pages数组里的页面路径，指向的是一个不存在的文件，那么MINA框架会自动创建这个页面的四个文件。</li>
+</ul>
+<h5 id="组件："><a href="#组件：" class="headerlink" title="组件："></a>组件：</h5><ul>
+<li>view作为容器来使用类似于HTML中的div标签</li>
+<li>text组件用来显示一段文本</li>
+<li>image组件用来显示一张图片</li>
+</ul>
+<h5 id="想对路径和绝对路径："><a href="#想对路径和绝对路径：" class="headerlink" title="想对路径和绝对路径："></a>想对路径和绝对路径：</h5><ul>
+<li>绝对路径以“/‘’开头，””/“代表根目录</li>
+<li>相对路径，路径中../表示向上一级</li>
+</ul>
+<h5 id="图片的存放："><a href="#图片的存放：" class="headerlink" title="图片的存放："></a>图片的存放：</h5><ul>
+<li>真实项目中，图片资源尽量不要存储在小程序的项目中，因为小程序的大小不能超过1MB。应该将图片存放你在服务器上，让小程序通过网络来加载图片资源。</li>
+</ul>
+<p>小程序所支持的CSS选择器</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>样例</th>
+<th>样例描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.class</td>
+<td>.sample</td>
+<td>选择所有拥有class=”sample”的组件</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>#sample</td>
+<td></td>
+</tr>
+<tr>
+<td>element</td>
+<td>view</td>
+<td>选择所有view的组件</td>
+</tr>
+<tr>
+<td>::after</td>
+<td>view::after</td>
+<td>在view组件后边插入内容</td>
+</tr>
+<tr>
+<td>::before</td>
+<td>view::before</td>
+<td>在view组件前边插入内容</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>本地资源在wxss中是无法使用的。</li>
+</ul>
+<h5 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h5><ul>
+<li>W3C提出</li>
+<li>让页面布局更加简单，很好的支持响应式布局。</li>
+<li>Flex也成为弹性布局，主要作用在容器上。</li>
+<li>设置display:flex是应用一切弹性布局属性的先决条件。</li>
+<li>flex-direction这个属性指定view内元素的排列方向。 确定主轴方向<ul>
+<li>row：主轴水平，方向为自左向右</li>
+<li>column：主轴水平，方向为自右向左</li>
+<li>row-reverse：主轴垂直，方向自上而下</li>
+<li>column-reverse：主轴垂直，方向自下而上</li>
+</ul>
+</li>
+</ul>
+<p>iphoone6的尺寸下设计：</p>
+<ul>
+<li>1物理像素=1rpx=0.5px<ul>
+<li>逻辑像素pt       </li>
+<li>物理像素px</li>
+</ul>
+</li>
+</ul>
+<p>以iphone6为例，模拟器理给出的分辨率是375x667; Dpr:2</p>
+<p>iphone6的水平方向有375个逻辑像素点，而竖直方向有667个逻辑像素点，每个逻辑像素点包含2个物理像素点。</p>
+<p>page代表着整个页面的容器，如果想对页面整体做样式或者属性设置，name应该考虑page这个页面的根元素。</p>
+<p>window配置项可用来设置小程序的状态栏、导航栏、标题和窗口的背景色。</p>
+<p><strong>未完待续…..</strong></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">xtslife</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/04/29/java-必会知识点/" class="pre-post btn btn-default" title="java 必会知识点">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">java 必会知识点</span>
+        </a>
+    
+    
+        <a href="/2019/04/29/诗词几首/" class="next-post btn btn-default" title="诗词几首">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">诗词几首</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#微信小程序的五个版本"><span class="toc-text">微信小程序的五个版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#demo"><span class="toc-text">demo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#页面构成该文件"><span class="toc-text">页面构成该文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#开发注意："><span class="toc-text">开发注意：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#组件："><span class="toc-text">组件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#想对路径和绝对路径："><span class="toc-text">想对路径和绝对路径：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#图片的存放："><span class="toc-text">图片的存放：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Flex布局"><span class="toc-text">Flex布局</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 25 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: false || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

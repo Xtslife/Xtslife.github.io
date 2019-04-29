@@ -16,10 +16,15 @@
     <link rel="dns-prefetch" href="http://www,xtslift.top">
     <!--SEO-->
 
-    <meta name="keywords" content>
+    <meta name="keywords" content="git,github">
 
 
-    <meta name="description" content>
+    <meta name="description" content="
+github的学习
+感觉再不学习这个工具要不行了，各种demo都挂载GitHub上，今天刻意的花时间来学习。在简书上有个大牛分享了教程，开篇就是全英文，来吧，慢慢解决。
+
+学习要点
+仓库的创建...">
 
 
 
@@ -31,7 +36,7 @@
     <!--Title-->
 
 
-<title>标签: 心态 | Smilelife</title>
+<title>git的学习 | Smilelife</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Smilelife" type="application/atom+xml">
@@ -136,50 +141,122 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="git的学习">
+            
+	            git的学习
+            
+        </h1>
+        <div class="post-meta">
     
-    
-        <li>
-            心态
-        </li>
-    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/programming/">编程</a>
+        </span>
     
 
-</ol>
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/git/">git</a> <a class="tag-link" href="/tags/github/">github</a>
+                
+            </span>
+        </span>
+    
 
-
-    <article class="post">
+    
         
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2019/04/27/断舍离/">断舍离</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime title>
-                        2019年04月27日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    
-01思考
-第一，断舍离是什么，它能给人带来怎样的变化？
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/29</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="https://www.lifeofpix.com/wp-content/uploads/2019/01/1394-photo-1543834872-1600x1067.jpg" alt="e"></p>
+<h3 id="github的学习"><a href="#github的学习" class="headerlink" title="github的学习"></a>github的学习</h3><blockquote>
+<p>感觉再不学习这个工具要不行了，各种demo都挂载GitHub上，今天刻意的花时间来学习。在简书上有个大牛分享了教程，开篇就是全英文，来吧，慢慢解决。</p>
+</blockquote>
+<h4 id="学习要点"><a href="#学习要点" class="headerlink" title="学习要点"></a>学习要点</h4><ul>
+<li>仓库的创建和使用</li>
+<li>启动和管理新的分支</li>
+<li>对文件进行更改并将其作为提交推送到GitHub</li>
+<li>打开并合并一个pull请求</li>
+</ul>
+<h3 id="Git和GitHub详细教程"><a href="#Git和GitHub详细教程" class="headerlink" title="Git和GitHub详细教程"></a>Git和GitHub详细教程</h3><h4 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h4><ul>
+<li>协同修改 多人并行不悖的修改服务器端的同一个文件，数据备份</li>
+<li>不仅保存目录和文件的当前状态，还能够保存每一个提交过的历史状态</li>
+<li>版本管理</li>
+<li>在保存每一个版本文件信息的时候要做到不保存重复的数据，以节约存储空间，提高运行效率。这方面SVN采用的是增量式管理的方式 而Git采取了文件系统快照的方式。</li>
+<li>权限控制</li>
+<li>对团队中参与开发的人员进行权限控制</li>
+<li>对团队外开发者贡献的代码进行审核—Git独有</li>
+<li>将本地文件恢复到某一个历史状态</li>
+<li>分支管理</li>
+<li>允许开发团队在工作过程中多条生产线同时推进任务，进一步提高效率</li>
+</ul>
+<h5 id="二、版本控制介绍"><a href="#二、版本控制介绍" class="headerlink" title="二、版本控制介绍"></a>二、版本控制介绍</h5><ul>
+<li>版本控制工具<ul>
+<li>集中式版本控制工具;CVS  SVN VSS  集中式版本控制工具的模式主要是将代码专门放在一个服务器上</li>
+<li>分布式版本控制工具：Git Mercurial、 Bazaar、 Darcs</li>
+</ul>
+</li>
+</ul>
+<h5 id="三、Git历史"><a href="#三、Git历史" class="headerlink" title="三、Git历史"></a>三、Git历史</h5><ul>
+<li>Git官网：<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></li>
+<li>Git优势<ul>
+<li>大部分操作在本地完成，不需要联网</li>
+<li>完整性保证</li>
+<li>尽可能添加数据而不是删除或修改数据</li>
+<li>分支操作非常快捷流畅</li>
+<li>与linux命令全面兼容</li>
+</ul>
+</li>
+</ul>
 
-第二，我们为什么会舍不得扔东西？
-
-第三，如何断舍离？
-
-02 书中金句
-断舍离是维持生活状态的工作，也是自我探索的工具。试着使用高于自我形象的物品。使用精挑细选的自己喜爱的东西，这样就能够挖掘出全新的自...
-                
-            </p>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">xtslife</a>
+            
         </div>
-    </article>
- 
+        <div>
+            
+        </div>
+    </div>
+</article>
 
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/04/29/TCP与UDP协议/" class="pre-post btn btn-default" title="TCP与UDP协议">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">TCP与UDP协议</span>
+        </a>
+    
+    
+        <a href="/2019/04/29/java-必会知识点/" class="next-post btn btn-default" title="java 必会知识点">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">java 必会知识点</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
 
 
 
@@ -188,133 +265,14 @@
 
                 </main>
                 
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
+                    <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">搜索</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
-                
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
+        <h3 class="title">文章目录</h3>
         
-        
-    <div class="widget">
-        <h3 class="title">小白板</h3>
-        <div class="notification">
-            <p style="color:#B87333;font-size:14px" align="center">        
-    <img src="http://bmob-cdn-25248.b0.upaiyun.com/2019/04/26/a1233091405fd43c805d09b3ba8cf070.jpg"><br>        
-    关小涛 <br>              
-    心若向阳，无畏悲伤<br>
-    我若不坚强，谁替我勇敢<br>
-    企鹅：710612280<br>
-    微信：x7752301<br>   
-</p>
-        </div>
-    </div>
-
-        
-        
-    <div class="widget">
-      <h3 class="title">社交</h3> 
-        <div class="content social">
-            
-	            <a href="//github.com/xtslife" rel="external nofollow" title="Github" target="_blank">
-			    	<i class="git fa fa-git"></i>
-			    </a>
-            
-	            <a href="mailto:gszygtgt@163.com" rel="external nofollow" title="邮箱" target="_blank">
-			    	<i class="envelope-o fa fa-envelope-o"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-			    	<i class="qq fa fa-qq"></i>
-			    </a>
-            
-	            <a href="/" rel="external nofollow" title="微信" target="_blank">
-			    	<i class="weixin fa fa-weixin"></i>
-			    </a>
-            
-	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-			    	<i class="feed fa fa-feed"></i>
-			    </a>
-            
-        </div>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/literature/"><i class="fa" aria-hidden="true">文艺</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/"><i class="fa" aria-hidden="true">编程</i></a><span class="category-list-count">6</span></li></ul>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/"><i class="fa" aria-hidden="true">2019年04月</i></a><span class="archive-list-count">9</span></li></ul>
-    </div>
-
-
-        
-        
-  <div class="widget">
-    <h3 class="title">标签云</h3>
-    <div class="content tag-cloud">
-        
-            <canvas width="300" height="300" id="tag-cloud-3d">
-                <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/udp/" style="font-size: 10px;">udp</a> <a href="/tags/web/" style="font-size: 15px;">web</a> <a href="/tags/习惯/" style="font-size: 10px;">习惯</a> <a href="/tags/复习/" style="font-size: 10px;">复习</a> <a href="/tags/宋词/" style="font-size: 10px;">宋词</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/心态/" style="font-size: 10px;">心态</a> <a href="/tags/必会/" style="font-size: 10px;">必会</a> <a href="/tags/投资/" style="font-size: 10px;">投资</a> <a href="/tags/整理/" style="font-size: 10px;">整理</a> <a href="/tags/李白/" style="font-size: 10px;">李白</a> <a href="/tags/查理·芒格/" style="font-size: 10px;">查理·芒格</a> <a href="/tags/理财/" style="font-size: 10px;">理财</a> <a href="/tags/网路编程/" style="font-size: 10px;">网路编程</a> <a href="/tags/舍弃/" style="font-size: 10px;">舍弃</a>
-            </canvas>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#github的学习"><span class="toc-text">github的学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#学习要点"><span class="toc-text">学习要点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git和GitHub详细教程"><span class="toc-text">Git和GitHub详细教程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、概述"><span class="toc-text">一、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#二、版本控制介绍"><span class="toc-text">二、版本控制介绍</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、Git历史"><span class="toc-text">三、Git历史</span></a></li></ol></li></ol></li></ol>
         
     </div>
-  </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">友链</h3>
-        <div class="content friends-link">
-        
-            <a href="https://hexo.io/zh-cn" class="fa" target="_blank">Hexo官网</a>
-        
-            <a href="https://www.cnblogs.com/XtsLife" class="fa" target="_blank">博客园</a>
-        
-            <a href="https://blog.csdn.net/qq_39654866" class="fa" target="_blank">CSDN</a>
-        
-            <a href="http://www.gequdaquan.net/gqss" class="fa" target="_blank">听歌必备</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
+</aside>
 
                 
             </div>
@@ -367,8 +325,6 @@
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 

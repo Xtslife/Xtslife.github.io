@@ -1,0 +1,520 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Smilelife">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www,xtslift.top">
+    <!--SEO-->
+
+    <meta name="keywords" content="java,web,复习">
+
+
+    <meta name="description" content="
+知识点一：
+Response
+通过 response 输出中文
+通过 response 实现请求重定向
+通过 response 输出认证图片（选做）
+
+
+Request
+看 request 文...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>java EE复习 | Smilelife</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Smilelife" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="关小涛">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www,xtslift.top">Smilelife</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>主页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/programming/"><i class="fa "></i>编程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/life/"><i class="fa "></i>生活</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/literature/"><i class="fa "></i>文艺</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="java EE复习">
+            
+	            java EE复习
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/programming/">编程</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/java/">java</a> <a class="tag-link" href="/tags/web/">web</a> <a class="tag-link" href="/tags/复习/">复习</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/29</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="https://www.lifeofpix.com/wp-content/uploads/2019/02/270-niwat6121-jj-1600x923.jpg" alt=".ee"></p>
+<h5 id="知识点一："><a href="#知识点一：" class="headerlink" title="知识点一："></a>知识点一：</h5><ul>
+<li>Response<ul>
+<li>通过 response 输出中文</li>
+<li>通过 response 实现请求重定向</li>
+<li>通过 response 输出认证图片（选做）</li>
+</ul>
+</li>
+<li>Request<ul>
+<li>看 request 文档，查看获取请求方式 getMethod、请求资源 getRequestURI、请求头 getHeader、请求参数 getParameter 的方法</li>
+<li>如何向客户机输出不同类型的表单，以收集客户机的数据, 并在服务器端获取（必做）</li>
+<li>获取中文数据 (包括中文数据)</li>
+<li>理解请求转发和重定向区别</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="知识点二："><a href="#知识点二：" class="headerlink" title="知识点二："></a>知识点二：</h5><p>请求转发forward 和 请求重定向redirect 区别 ？？？</p>
+<p>1) 转发一次请求 一次响应； 重定向两次请求 两次响应<br>2) 转发URL地址 不变，重定向URL地址改变第二个资源地址<br>3) 转发只能转发给同一个网站内部资源，重定向可以定向到任何网站<br>4) 转发中/属于服务器内部路径 不写工程名，重定向/来自客户端必须要写工程名</p>
+<hr>
+<h5 id="知识点三："><a href="#知识点三：" class="headerlink" title="知识点三："></a>知识点三：</h5><p>获取客户机信息</p>
+<ul>
+<li><code>getRequestURL</code>方法 :返回客户端发出请求完整URL</li>
+<li><code>getRequestURI</code>方法 :返回请求行中的资源名部分</li>
+<li><code>getQueryString</code>方法 : 返回请求行中的参数部分</li>
+<li><code>getRemoteAddr</code>（重点） 返回发出请求的客户机的IP地址</li>
+<li><code>getMethod()</code> （重点） 获取客户机请求方式</li>
+<li><code>getContextPath</code>()（重点） 获得<strong>工程虚拟目录名称</strong></li>
+</ul>
+<hr>
+<h5 id="知识点四："><a href="#知识点四：" class="headerlink" title="知识点四："></a>知识点四：</h5><h5 id="Session-和-Cookie-的主要区别"><a href="#Session-和-Cookie-的主要区别" class="headerlink" title="Session 和 Cookie 的主要区别"></a><strong>Session 和 Cookie 的主要区别</strong></h5><ul>
+<li>Cookie 是把用户的数据写给<strong>用户的浏览器</strong>。cookie 基于客户端，不安全，并且大小和个数的限制。</li>
+<li>Session 技术把用户的数据写到<strong>用户独占的 session 中</strong>（服务器端）。session 域对象，范围一次会话范围，存个人相关的数据。</li>
+<li>Session 对象由服务器创建，开发人员可以调用 request 对象的 getSession 方法得到 session 对象。</li>
+<li>session API<ul>
+<li>setAttribute(String name, Object value)</li>
+<li>Object getAttribute(String name)</li>
+<li>String getId() 获取 seesion 的唯一的 ID</li>
+<li>void invalidate() 销毁的 seesion</li>
+</ul>
+</li>
+<li>session 为每个浏览器保存数据 </li>
+</ul>
+<p><strong>session的创建和销毁</strong></p>
+<ul>
+<li><p><strong>创建session</strong> : 第一次访问资源，调用request.getSession()</p>
+</li>
+<li><p>session销毁</p>
+<p>的三种方法:</p>
+<ul>
+<li>非正常关闭服务器</li>
+<li>session的过期，默认是30分钟。(tomcat/conf/web.xml)</li>
+</ul>
+</li>
+</ul>
+<p><strong>session的域对象</strong> </p>
+<ul>
+<li>ServlerContext ：代表整个web应用，数据库链接</li>
+<li>session ：一次会话，存放个人的信息。</li>
+<li>request ：一次请求，存放错误处理。</li>
+</ul>
+<hr>
+<h5 id="知识点五："><a href="#知识点五：" class="headerlink" title="知识点五："></a>知识点五：</h5><h4 id="Servlet-的数据访问范围"><a href="#Servlet-的数据访问范围" class="headerlink" title="Servlet 的数据访问范围"></a><strong>Servlet 的数据访问范围</strong></h4><ul>
+<li>ServletContext 存放的数据，共享于整个 web 应用中。</li>
+<li>只要服务器不重启，存放在 ServletContext 中的数据就一直有效，并且所有用户都可以访问 ServletContext 中存放的数据。</li>
+<li>因为同一 web 应用仅有一个 ServletContext，当多用户访问时，会有线程问题，ServletContext 不是线程安全的，当然我们也可以使用 synchronized 关键字来同步 doGet() 和 doPost() 方法，解决线程安全问题。</li>
+<li>例如：数据库的连接、当前在线用户数、系统管理员联系方式。</li>
+<li>Session 是<strong>同一用户</strong>在<strong>一次会话</strong>期间内，在 web 应用的各个资源之间都可以共享的数据范围。使用 Session 就不需要像 Request 那样通过转发请求来传递数据，当使用链接或者新提交 Form 表单时，原来 Session 中的数据，对于当前用户仍然可用。</li>
+<li>注意：Session 中的数据仅对当前用户可见。</li>
+<li>存放在 Request 之中的数据存活范围<ul>
+<li>\1. 使用<code>HttpServletRequest</code>对象的<code>getRequestDispatcher( )方法</code>得到 RequestDispatcher 对象，并调用该对象的 forward() 方法和 include() 方法时。当前页面的 HttpServletRequest 对象中数据可以在目标页面使用。</li>
+<li>\2. 当使用链接，或者重新提交一个 Form 时，当前的页面的 Request 对象就会被销毁，其中的数据全部丢失，并生成新的请求。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="知识点六："><a href="#知识点六：" class="headerlink" title="知识点六："></a>知识点六：</h5><p>JSP的内置对象（9个）<br>request response session application out pageContext page config exception</p>
+<table>
+<thead>
+<tr>
+<th>内置对象</th>
+<th>真实的对象</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>request</td>
+<td>HttpServletRequest</td>
+<td>setAttribute() getAttribute()</td>
+</tr>
+<tr>
+<td>response</td>
+<td>HttpServletResponse</td>
+<td>addCookie() getWriter()</td>
+</tr>
+<tr>
+<td>session</td>
+<td>HttpSession</td>
+<td>setAttribute() getAttribute()</td>
+</tr>
+<tr>
+<td>application</td>
+<td>ServletContext</td>
+<td>setAttribute() getAttribute()</td>
+</tr>
+<tr>
+<td>config</td>
+<td>ServletConfig</td>
+<td>getInitParameter() getInitParameterNames()</td>
+</tr>
+<tr>
+<td>exception</td>
+<td>Throwable</td>
+<td>getMessage()</td>
+</tr>
+<tr>
+<td>page</td>
+<td>this(HttpServlet)Object</td>
+<td>（不使用对象）</td>
+</tr>
+<tr>
+<td>out</td>
+<td>JspWriter</td>
+<td>write() print()</td>
+</tr>
+<tr>
+<td>pageContext</td>
+<td>PageContext</td>
+<td>setAttribute() getAttribute()</td>
+</tr>
+</tbody>
+</table>
+<p>向JSP的四个作用域范围内存数据。 </p>
+<ul>
+<li>Servlet中有三个域，而JSP有四个域。</li>
+<li>JSP中多了pageContext的域范围，代表当前页面范围。</li>
+</ul>
+<p>JSP的四种数据范围</p>
+<ul>
+<li>ServletContext 整个web应用<ul>
+<li>application 应用范围</li>
+</ul>
+</li>
+<li>session 一次会话,会话范围</li>
+<li>request 一次请求,请求范围</li>
+<li>pageContext 当前页面,page范围</li>
+</ul>
+<hr>
+<h5 id="案例一："><a href="#案例一：" class="headerlink" title="案例一："></a>案例一：</h5><h5 id="实现文件下载（初级下载）"><a href="#实现文件下载（初级下载）" class="headerlink" title="实现文件下载（初级下载）"></a><strong>实现文件下载</strong>（初级下载）</h5><ul>
+<li>对于超链接，浏览器可以解析直接打开。</li>
+<li>对于弹出下载窗口： <ul>
+<li>前提条件：先准备一个文件。</li>
+<li>读取文件，读入到输入流中。</li>
+<li>通过response读出到浏览器端。</li>
+<li>设置头信息 <ul>
+<li>Content-Disposition attachment;filename=文件名称<ul>
+<li>以附件的形式打开</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="案例二："><a href="#案例二：" class="headerlink" title="案例二："></a>案例二：</h5><h5 id="session-案例"><a href="#session-案例" class="headerlink" title="session 案例"></a><strong>session 案例</strong></h5><ul>
+<li><p>使用 Session 完成简单的购物车功能</p>
+<ul>
+<li>购物车–&gt;<code>Map&lt;String,Integer&gt;</code> cart - 购物车–&gt; 把购物车存入 seesion 中。</li>
+<li>获取数据</li>
+<li>判断是否是第一次访问 session.getAttribute(“cart”);<ul>
+<li>如果第一次访问，cart 创建一个购物车，放入商品的名称和数量</li>
+<li>如果不是第一次访问，cart!=null<ul>
+<li>判断是否包含该商品？<ul>
+<li>如果包含，数量拿出来，++，放回去，存入 seesion 中</li>
+<li>如果不包含，正常放入到购物车中。存入 seesion 中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>继续购物或者结算</li>
+</ul>
+<p>​</p>
+</li>
+</ul>
+<hr>
+<h5 id="案例三："><a href="#案例三：" class="headerlink" title="案例三："></a>案例三：</h5><p>利用 Session 实现一次性验证码用户登陆 </p>
+<ul>
+<li>一次性验证码的主要目的就是为了限制人们利用工具软件来暴力猜测密码。</li>
+<li>服务器程序接收到表单数据后，首先判断用户是否填写了正确的验证码，只有该验证码与服务器端保存的验证码匹配时，服务器程序才开始正常的表单处理流程。</li>
+<li>密码猜测工具要逐一尝试每个密码的前题条件是先输入正确的验证码，而验证码是一次性有效的，这样基本上就阻断了密码猜测工具的自动地处理过程。</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">xtslife</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/04/29/诗词几首/" class="pre-post btn btn-default" title="诗词几首">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">诗词几首</span>
+        </a>
+    
+    
+        <a href="/2019/04/27/断舍离/" class="next-post btn btn-default" title="断舍离">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">断舍离</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#知识点一："><span class="toc-text">知识点一：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#知识点二："><span class="toc-text">知识点二：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#知识点三："><span class="toc-text">知识点三：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#知识点四："><span class="toc-text">知识点四：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Session-和-Cookie-的主要区别"><span class="toc-text">Session 和 Cookie 的主要区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#知识点五："><span class="toc-text">知识点五：</span></a></li></ol><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet-的数据访问范围"><span class="toc-text">Servlet 的数据访问范围</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#知识点六："><span class="toc-text">知识点六：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例一："><span class="toc-text">案例一：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#实现文件下载（初级下载）"><span class="toc-text">实现文件下载（初级下载）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例二："><span class="toc-text">案例二：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#session-案例"><span class="toc-text">session 案例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#案例三："><span class="toc-text">案例三：</span></a></li></ol>
+        
+    </li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 25 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: false || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

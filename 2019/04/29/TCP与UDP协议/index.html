@@ -1,0 +1,411 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Smilelife">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www,xtslift.top">
+    <!--SEO-->
+
+    <meta name="keywords" content="tcp,udp,网路编程">
+
+
+    <meta name="description" content="
+TCP与UDP协议
+TCP：传输控制协议
+一种以固接连线为基础的协议，它提供两台计算机间可靠的数据传送。
+TCP可以保证数据确实到达，抵达的数据的排列顺序和送出时的顺序相同
+
+
+UDP：用户数...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>TCP与UDP协议 | Smilelife</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Smilelife" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="关小涛">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www,xtslift.top">Smilelife</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>主页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/programming/"><i class="fa "></i>编程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/life/"><i class="fa "></i>生活</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/literature/"><i class="fa "></i>文艺</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="TCP与UDP协议">
+            
+	            TCP与UDP协议
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/programming/">编程</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/tcp/">tcp</a> <a class="tag-link" href="/tags/udp/">udp</a> <a class="tag-link" href="/tags/网路编程/">网路编程</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/04/29</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="https://www.lifeofpix.com/wp-content/uploads/2018/06/DSCF3316-1600x1069.jpg" alt></p>
+<h3 id="TCP与UDP协议"><a href="#TCP与UDP协议" class="headerlink" title="TCP与UDP协议"></a>TCP与UDP协议</h3><ul>
+<li>TCP：传输控制协议<ul>
+<li>一种以固接连线为基础的协议，它提供两台计算机间可靠的数据传送。</li>
+<li>TCP可以保证数据确实到达，抵达的数据的排列顺序和送出时的顺序相同</li>
+</ul>
+</li>
+<li>UDP：用户数据报协议<ul>
+<li>无连接通讯协议，广播的方式发送</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="端口和套接字"><a href="#端口和套接字" class="headerlink" title="端口和套接字"></a>端口和套接字</h4><h5 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h5><ul>
+<li>一台计算机只有单一的连接到网络的物理连接，所有的数据都通过此链接对内、对外送达特定的计算机。这就是端口。</li>
+<li>网络程序设计中的端口并非真实的物理存在，而是一个假想的连接装置。端口被规定为0~65535之间的整数。</li>
+</ul>
+<h5 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h5><ul>
+<li>网络程序中的套接字socket用于将应用程序和端口连接起来，套接字是一个假象的连接装置</li>
+</ul>
+<hr>
+<h4 id="TCP程序设计常用类"><a href="#TCP程序设计常用类" class="headerlink" title="TCP程序设计常用类"></a>TCP程序设计常用类</h4><ul>
+<li><h5 id="InetAddress类的常用方法"><a href="#InetAddress类的常用方法" class="headerlink" title="InetAddress类的常用方法"></a>InetAddress类的常用方法</h5></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>返回值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getByName(String host)</td>
+<td>InetAddress</td>
+<td>获取与host对应的InetAddress对象</td>
+</tr>
+<tr>
+<td>getHostAddress()</td>
+<td>String</td>
+<td>获取InerAddress对象所包含的IP地址</td>
+</tr>
+<tr>
+<td>getHostName()</td>
+<td>String</td>
+<td>获取IP地址的主机名</td>
+</tr>
+<tr>
+<td>getLocalHost()</td>
+<td>InetAddress</td>
+<td>返回本地主机的Inetaddress对象</td>
+</tr>
+</tbody>
+</table>
+<p> InetAddress类的方法会抛出UnknownHostException异常，所以必须进行异常处理。这个异常在主机不存在或网络连接错误时发生。</p>
+<ul>
+<li><h6 id="ServerSocket类"><a href="#ServerSocket类" class="headerlink" title="ServerSocket类"></a>ServerSocket类</h6><ul>
+<li>ServerSocket类用于表示服务器套接字，其主要功能是等待来自网络上的请求，它可通过指定端口来等待套接字。</li>
+<li>服务器套接字一次可以与一个套接字连接。</li>
+<li>如果多台客户机同时提出连接请求，服务器套接字会将请求连接的客户机存入队列，然后从中取出套接字与服务器新建的套接字连接起来。队列的默认大小是50；</li>
+<li>ServerSocket类的主要构造方法<ul>
+<li>ServerSocket（)：创建非绑定服务器套接字</li>
+<li>ServerSocket（int port）:创建绑定到特定端口的服务器套接字</li>
+</ul>
+</li>
+<li>客户端输出则服务端就是输入，服务端输出则客户端就是输入</li>
+<li>accept（）方法会阻塞线程的继续执行，直到接收到客户端的请求。</li>
+</ul>
+</li>
+</ul>
+<p>创建线程的三种方法（常用的只有两种）</p>
+<p><strong>1）继承Thread类创建线程</strong></p>
+<p><strong>2）实现Runnable接口创建线程</strong></p>
+<p><strong>3）使用Callable和Future创建线程</strong></p>
+<p><strong>————————继承Thread类创建线程———————</strong></p>
+<p>通过继承Thread类来创建并启动多线程的一般步骤如下</p>
+<ol>
+<li>定义Thread类的子类，并重写该类的<strong>run()</strong>方法，该方法的方法体就是线程需要完成的任务，run()方法也称为线程执行体。</li>
+<li>创建Thread子类的实例，也就是创建了线程对象</li>
+<li>启动线程，即调用线程的<strong>start()</strong>方法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;<span class="comment">//继承Thread类</span></span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">      </span><br><span class="line">　　<span class="comment">//重写run方法</span></span><br><span class="line">      </span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="keyword">new</span> MyThread().start();<span class="comment">//创建并启动线程</span></span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>————————实现Runnable接口创建线程———————</strong></p>
+<p>通过实现Runnable接口创建并启动线程一般步骤如下：</p>
+<ol>
+<li>定义Runnable接口的实现类，一样要重写run()方法，这个run（）方法和Thread中的run()方法一样是线程的执行体</li>
+<li>创建Runnable实现类的实例，并用这个实例作为Thread的target来创建Thread对象，这个Thread对象才是真正的线程对象</li>
+<li>第三步依然是通过调用线程对象的start()方法来启动线程</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread2</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;<span class="comment">//实现Runnable接口</span></span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="comment">//重写run方法</span></span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">　　　　<span class="comment">//创建并启动线程</span></span><br><span class="line"></span><br><span class="line">　　　　MyThread2 myThread=<span class="keyword">new</span> MyThread2();</span><br><span class="line"></span><br><span class="line">　　　　Thread thread=<span class="keyword">new</span> Thread(myThread);</span><br><span class="line"></span><br><span class="line">　　　　thread().start();</span><br><span class="line"></span><br><span class="line">　　　　<span class="comment">//或者    new Thread(new MyThread2()).start();</span></span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>————————使用Callable和Future创建线程———————</strong></p>
+<p><strong>和Runnable接口不一样，Callable接口提供了一个call（）方法作为线程执行体，call()方法比run()方法</strong>功能要强大。（不常用）</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">xtslife</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/04/29/git的学习/" class="next-post btn btn-default" title="git的学习">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">git的学习</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP与UDP协议"><span class="toc-text">TCP与UDP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#端口和套接字"><span class="toc-text">端口和套接字</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#端口"><span class="toc-text">端口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#套接字"><span class="toc-text">套接字</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP程序设计常用类"><span class="toc-text">TCP程序设计常用类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#InetAddress类的常用方法"><span class="toc-text">InetAddress类的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ServerSocket类"><span class="toc-text">ServerSocket类</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 25 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: false || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
