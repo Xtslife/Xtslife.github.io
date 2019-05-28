@@ -1,0 +1,630 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Smilelife">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www,xtslift.top">
+    <!--SEO-->
+
+    <meta name="keywords" content="java,基础">
+
+
+    <meta name="description" content="
+环境变量path和classpath的作用是什么？path变量是Windows程序文件的目录，作用是指定DOS命令行下命令的路径
+classpath变量值是java类文件的目录，作用是指定类搜...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>java基础知识（一） | Smilelife</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Smilelife" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="关小涛">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www,xtslift.top">Smilelife</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>主页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/programming/"><i class="fa "></i>编程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/tool/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/life/"><i class="fa "></i>生活</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/literature/"><i class="fa "></i>文艺</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="java基础知识（一）">
+            
+	            java基础知识（一）
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/programming/">编程</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/java/">java</a> <a class="tag-link" href="/tags/基础/">基础</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/05/28</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><img src="https://www.lifeofpix.com/wp-content/uploads/2018/05/308-name5903-chim-1600x1067.jpg" alt></p>
+<h5 id="环境变量path和classpath的作用是什么？"><a href="#环境变量path和classpath的作用是什么？" class="headerlink" title="环境变量path和classpath的作用是什么？"></a>环境变量path和classpath的作用是什么？</h5><p>path变量是Windows程序文件的目录，作用是指定DOS命令行下命令的路径</p>
+<p>classpath变量值是java类文件的目录，作用是指定类搜索路径。JVM就是通过classoath来寻找该类的字节码文件的。</p>
+<p><strong>八进制和十六进制与十进制的转换</strong></p>
+<h5 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h5><p>1字节的：byte boolean </p>
+<p>2字节的：short char </p>
+<p>4字节的：int float </p>
+<p>8字节的：double long </p>
+<p>注意：整型默认是int，浮点型默认是double</p>
+<h5 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h5><ul>
+<li>参与运算的数据类型要一致</li>
+<li>容量小的类型默认转换为容量大的类型</li>
+<li>byte,short,char—int —long —float—double </li>
+<li>注意：byte，short，char之间不会互相转换，他们三者在计算时会首先转换为int类型</li>
+</ul>
+<p>&amp;&amp;（短路与）和&amp;（与）的区别？</p>
+<ul>
+<li>&amp;&amp;左边false了，右边就不操作了</li>
+<li>&amp;左边false了，右边还得继续操作</li>
+</ul>
+<p>||和|的区别？</p>
+<ul>
+<li>||左边true了，右边就不操作了</li>
+<li>|左边true了，右边还的继续操作</li>
+</ul>
+<h5 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h5><h5 id="switch-用于定义选择结构范围："><a href="#switch-用于定义选择结构范围：" class="headerlink" title="switch 用于定义选择结构范围："></a>switch 用于定义选择结构范围：</h5><ul>
+<li>被选择的结果，该表达式只能有4种类型：byte，short，int，char，enum（jdk5后）,String (JDK7后)</li>
+<li>default：当所有的case都不匹配时执行default里面的内容</li>
+</ul>
+<h5 id="如何自定义函数？"><a href="#如何自定义函数？" class="headerlink" title="如何自定义函数？"></a>如何自定义函数？</h5><ul>
+<li>明确函数的返回值类型</li>
+<li>明确参数列表（形参的类型及个数）</li>
+</ul>
+<h5 id="函数的重载？"><a href="#函数的重载？" class="headerlink" title="函数的重载？"></a>函数的重载？</h5><ul>
+<li>在同一个类中，允许存在一个以上的同名函数，只要他们的<strong>参数个数</strong>或者<strong>参数类型</strong>不同即可</li>
+<li>函数的功能一样，仅仅是参与运算的未知内容不同时，可以定义对个函数，却是用统一函数名称</li>
+<li>与返回值无关</li>
+<li>判断是否重载：函数名相同，参数列表不同（个数和类型）</li>
+</ul>
+<p><strong>堆内存中的数据怎么样判断他是否不被使用？</strong></p>
+<h5 id="选择排序："><a href="#选择排序：" class="headerlink" title="选择排序："></a>选择排序：</h5><blockquote>
+<p>原理：先从弄0角标位置元素与其他位置元素（自己除外）进行一次比较，每次比较完后，最小值出现在最         左边，并将起始位置后移一个角标，直至次尾角标位。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.xteslife.exel;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> 小涛</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019-05-26  17:53</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span>[] array= <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>, <span class="number">1</span>, <span class="number">43</span>, <span class="number">23</span>, <span class="number">18</span>&#125;;</span><br><span class="line">        selectSort(array);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x:array)</span><br><span class="line">            System.out.println(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> y=i+<span class="number">1</span>;y&lt;arr.length;y++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(arr[i]&gt;arr[y])&#123;</span><br><span class="line">                    <span class="comment">/*arr[i]=arr[i]+arr[y];</span></span><br><span class="line"><span class="comment">                    arr[y]=arr[i]-arr[y];</span></span><br><span class="line"><span class="comment">                    arr[i]=arr[i]-arr[y];*/</span></span><br><span class="line">                    arr[i]=arr[i]^arr[y];</span><br><span class="line">                    arr[y]=arr[i]^arr[y];</span><br><span class="line">                    arr[i]=arr[i]^arr[y];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><blockquote>
+<p>原理：相邻的元素，两两相比，大的后移。每次比较玩，最大值出现在右边。</p>
+</blockquote>
+<blockquote>
+<p>N个数字要排序完成，总共进行N-1趟排序，每第i趟的排序次数为（N-1）次，所以可以用双循环语句，外层控制循环多少趟，内层控制每一次的循环次数</p>
+<p>冒泡排序法口诀</p>
+<p>外层循环  0到n-1      //控制比较轮数     N表示元素的个数</p>
+<p>内层循环   0到n-i-1     //控制每一轮比较次数</p>
+<p>两两比较做交换</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">0</span>;y&lt;arr.length-i-<span class="number">1</span>;y++)&#123;</span><br><span class="line">              <span class="keyword">if</span> (arr[y]&gt;arr[y+<span class="number">1</span>])&#123;</span><br><span class="line">                  arr[y]=arr[y]^arr[y+<span class="number">1</span>];</span><br><span class="line">                  arr[y+<span class="number">1</span>]=arr[y]^arr[y+<span class="number">1</span>];</span><br><span class="line">                  arr[y]=arr[y]^arr[y+<span class="number">1</span>];</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="成员变量和局部变量的区别"><a href="#成员变量和局部变量的区别" class="headerlink" title="成员变量和局部变量的区别"></a>成员变量和局部变量的区别</h5><ul>
+<li>作用范围<ul>
+<li>成员变量作用于整个类</li>
+<li>局部变量只作用于它所属的范围</li>
+</ul>
+</li>
+<li>生命周期和位置<ul>
+<li>成员变量存储在堆内存中，是属于对象的，随着对象的存在而存在，随着对象的消失而消失</li>
+<li>局部变量存储在栈内存中，是属于它所属的范围，使用完立即被释放</li>
+</ul>
+</li>
+<li>初始值<ul>
+<li>成员变量都有默认初始值</li>
+<li>局部变量没有默认值，要想使用必须遵循<ul>
+<li>先定义（声明）再赋值，最后使用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h5><ul>
+<li>自定义类中如果没有构造方法，系统会默认给出一个午餐构造方法</li>
+<li>如果你给定了构造方法，系统将不再提供无参构造方法了</li>
+<li>建议：每次我们都手动给出无参构造方法</li>
+</ul>
+<h5 id="this的三种使用场景"><a href="#this的三种使用场景" class="headerlink" title="this的三种使用场景"></a>this的三种使用场景</h5><ul>
+<li>局部变量隐藏成员变量</li>
+<li>构造方法中使用this</li>
+<li>比较年龄</li>
+</ul>
+<h5 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h5><h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p><strong>定义</strong></p>
+<blockquote>
+<p>他是由一对{}括起来的代码</p>
+</blockquote>
+<p><strong>分类：</strong></p>
+<ul>
+<li>局部代码块：用在局部可以及时释放内存，提高效率</li>
+<li>构造代码块：每个构造方法运行时都会自动调用构造代码块，可以对所有对象初始化</li>
+<li>静态代码块：随着类的加载而执行，而且只执行一次，优先于主方法</li>
+</ul>
+<p>假如我们有一个Persion对象，请问Persion p = new Persion(); 在内存中到底做了什么？</p>
+<p>步骤：</p>
+<ul>
+<li>把Persion.class问价加载近内存</li>
+<li>在栈内存空间开批一个小空间，存储P变量</li>
+<li>在堆内存中开辟空间。创建对象</li>
+<li>对对象中的成员变量进行默认初始化</li>
+<li>执行构造代码块，如果没有构造代码块，就不执行</li>
+<li>对对象中的成员变量进行赋值</li>
+<li>把对象构造初始化完毕</li>
+<li>将对象在堆内存的首地址赋给栈内存变量P</li>
+</ul>
+<h4 id="static"><a href="#static" class="headerlink" title="static"></a>static</h4><p>特点：</p>
+<ul>
+<li>随着类的加载而加载</li>
+<li>优先于对象存在</li>
+<li>被所有对象共享</li>
+<li>可以直接被类名调用</li>
+</ul>
+<p>注意事项：</p>
+<ol>
+<li>静态成员只能访问静态成员</li>
+<li>静态方法中不能有this和super关键字</li>
+<li>主函数是静态的</li>
+</ol>
+<h5 id="静态变量和非静态变量的区别"><a href="#静态变量和非静态变量的区别" class="headerlink" title="静态变量和非静态变量的区别"></a>静态变量和非静态变量的区别</h5><p>A：静态变量随着类的加载而加载，随着类的消失而消失。生命周期最长。 </p>
+<p>​     非静态变量随着对象的创建而存在，随着对象的消失而消失。 </p>
+<p>B：静态变量和类相关，是所属于类的，可以直接被类名调用，也可以被对象名调用。 </p>
+<p>也称为类变量。 </p>
+<p>​     非静态变量和对象相关，是所属于对象的，只能被对象名调用。称为实例(对象)变 </p>
+<p>量。 </p>
+<p>C：静态变量存储于方法区中的静态区。 </p>
+<p>​      非静态变量存储于对象的区域，在堆内存中。 </p>
+<p>D：静态变量的数据被所有的对象共享。 </p>
+<p>​       非静态变量是每个对象特有的数据。</p>
+<p><code>某个成员方法访问了静态成员，那么该方法就必须定义为static修饰的。</code></p>
+<h4 id="在IDEA中怎么制作帮助文档"><a href="#在IDEA中怎么制作帮助文档" class="headerlink" title="在IDEA中怎么制作帮助文档"></a>在IDEA中怎么制作帮助文档</h4><h3 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h3><ul>
+<li><p>保证对象在内存中只有一个</p>
+</li>
+<li><p>如何保证？</p>
+<ul>
+<li>不能让其他类来创建对象</li>
+<li>本类中要创建一一个本类的对象</li>
+<li>对外提供公共的方法</li>
+</ul>
+</li>
+<li><p>什么时候是用呢？</p>
+<ul>
+<li>配置文件</li>
+</ul>
+</li>
+<li><p>单列的两种模式</p>
+<ul>
+<li><p>第一种:饿汉模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个本类对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Teacher t = <span class="keyword">new</span> Teacher();</span><br><span class="line">    <span class="comment">//为了保证其他类不能够创建对象（将构造方法私有化）</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Teacher</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">//为了让外界能够通过类名直接调用</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Teacher <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">    Teacher t1 = Teacher.getInstance();</span><br><span class="line">    Teacher t2 = Teacher.getIndtance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二种方式：懒汉式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个本类对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Teacher t = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">//为了保证其他类不能够创建对象</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Teacher</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="comment">//为了外界能够通过类名直接调用</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Teacher <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(t==<span class="keyword">null</span>)&#123;</span><br><span class="line">            Synchronized(Teacher.class)&#123;</span><br><span class="line">                <span class="keyword">if</span>(t==<span class="keyword">null</span>)&#123;</span><br><span class="line">                    t = <span class="keyword">new</span> Teacher();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">    Teacher t1 = Teacher.getInstance();</span><br><span class="line">    Teacher t2 = Teacher.getInstance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>注意：开发一般使用饿汉式，第二种在多线程的时候会有安全隐患</p>
+</li>
+<li><p>面试一般考懒汉式（延迟加载）</p>
+</li>
+</ul>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><h5 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h5><ul>
+<li>Java只支持单继承，不支持多继承（子类调用父类的不确定性）但是它支持多层继承</li>
+<li>父类有的子类也有，而且子类可以改变父类的属性值，重写父类的成员方法，父类没有的子类也可以增加</li>
+<li>父类的属性和方法可以继承，但是构造放噶不能继承，子类的构造方法隐式的调用父类的无参构造方法，当父类没有无参构造方法时，子类需要使用super来显示的调用父类的构造方法。</li>
+</ul>
+<h5 id="继承后的Fu和Zi的关系"><a href="#继承后的Fu和Zi的关系" class="headerlink" title="继承后的Fu和Zi的关系"></a>继承后的Fu和Zi的关系</h5><ul>
+<li>遵循就近原则</li>
+</ul>
+<h4 id="重写和重载的方法"><a href="#重写和重载的方法" class="headerlink" title="重写和重载的方法"></a>重写和重载的方法</h4><ul>
+<li>重载：<ul>
+<li>在同一个类中</li>
+<li>方法名相同，参数类表不同</li>
+</ul>
+</li>
+<li>重写：<ul>
+<li>存在于父子类中</li>
+<li>方法的声明一致（名称和参数）</li>
+<li>子类的访问权限不能低于父类的访问权限</li>
+</ul>
+</li>
+<li>注意：<ul>
+<li>父类中的私有方法不可以被覆盖</li>
+<li>在子类覆盖方法中，要想继续使用被覆盖的父类方法可以通过supper.方法名获取。</li>
+<li>This代表本类对象的引用</li>
+<li>super代表父类所属的空间，并不是一个对象</li>
+</ul>
+</li>
+<li>结论：父类的构造函数，既可以给本类对象初始化，也可以给子类对象初始化。</li>
+</ul>
+<h4 id="final"><a href="#final" class="headerlink" title="final"></a>final</h4><ul>
+<li>final修饰的类不能被继承‘</li>
+<li>final修饰的成员变量不能被重写</li>
+<li>final修饰的成员变量是一个常量</li>
+</ul>
+<h4 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h4><ul>
+<li>只有功能声明，没有功能主体的方法称为抽象方法</li>
+<li>特点：<ul>
+<li>抽象类和抽象方法都必须用abstract关键字修饰</li>
+<li>抽象方法一定要在抽象类中</li>
+<li>一个类继承了抽象类，那么该类实现类中的所有抽象方法</li>
+</ul>
+</li>
+<li>注意：抽象关键字abstract不可以和final，private.static关键字共存。</li>
+</ul>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><ul>
+<li>概述：接口是特殊的抽象类，所有的属性都是公开静态常量（全局常量），所有的方法都是公开的抽象方法而且没有构造方法。</li>
+<li>特点：<ul>
+<li>接口是对外暴露的规则</li>
+<li>接口是程序功能的扩展</li>
+<li>接口的出现降低耦合性</li>
+<li>接口可以用来多实现</li>
+<li>类与接口之间是实现关系，而且类可以继承一个类的同时实现多个接口。接口与接口之间可以有继承关系。</li>
+</ul>
+</li>
+<li>注意：<ul>
+<li>如果接口默认的方法是Public和abstract可以省略不写，但是类在实现接口时，不可省略public</li>
+<li>类实现接口的时候，要么全部实现接口中的方法，要么类本身定义为抽象类，接口不能被实例化，所有成员有固定修饰符。</li>
+</ul>
+</li>
+</ul>
+<h4 id="接口和抽象类的区别？—都是不断向上抽取出来的"><a href="#接口和抽象类的区别？—都是不断向上抽取出来的" class="headerlink" title="接口和抽象类的区别？—都是不断向上抽取出来的"></a>接口和抽象类的区别？—都是不断向上抽取出来的</h4><ul>
+<li>抽象类只能单继承，接口可以多实现</li>
+<li>抽象类中可以有非抽象方法。抽象类中可以定义变量和常量。接口中的方法都是抽象方法，接口中只能有静态常量。因为接口中的方法都有默认修饰符：public abstract ;接口中的成员变量都有默认修饰符:Public static final</li>
+<li>抽象类中定义的是一个体系的共性功能，接口中通常定义的是对象中的扩展功能。</li>
+<li>接口的出现避免了单继承的局限性</li>
+<li>抽象类被继承表示的是：is a的关系，叫做：xx是yy的一种。接口被实现表示的是：like a 的关系。叫做xx像yy一种。</li>
+</ul>
+<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><ul>
+<li>概述：事物的多种形态，它分为静态多态（重载）和动态多态（对象的多态）</li>
+<li>特点：<ul>
+<li>体现<ul>
+<li>多态用在方法的参数上m(A a)可以用A的任何一个子类对象作为参数</li>
+<li>多态用在方法的返回值上，方法的返回值可能是A的子类对象</li>
+</ul>
+</li>
+<li>前提:<ul>
+<li>类与类（接口）之间有继承（实现）关系</li>
+<li>必须有重写</li>
+<li>父类引用指向子类对象</li>
+</ul>
+</li>
+<li>多态的成员变量（不理解）<ul>
+<li>成员变量：编译看左边，运行也看左边</li>
+<li>成员方法：编译看左边，运行看右边</li>
+<li>静态方法：编译看做边，运行也看左边</li>
+</ul>
+</li>
+<li>好处：提高了代码的扩展性，便于后期可维护性，把不同的子类对象都看成是父类的对象，屏蔽子类差异，使得程序更加通用</li>
+<li>弊端：只能使用子类中和父类中同名的方法，对于子类特有的方法试用不了。</li>
+<li>ClassCastException:在进行子类特有的方法使用时，要进行向下转型，转型前一定要做判断，否则容易发生此异常增强程序的健壮性</li>
+</ul>
+</li>
+</ul>
+<h4 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h4><h5 id="throws-throw抛出"><a href="#throws-throw抛出" class="headerlink" title="throws,throw抛出"></a>throws,throw抛出</h5><p>区别：一旦执行throw语句，就结束功能</p>
+<ul>
+<li>使用位置<ul>
+<li>throws在方法的声明上使用</li>
+<li>throw在方法体内使用</li>
+</ul>
+</li>
+<li>使用格式<ul>
+<li>throws后面跟的使用异常的类名</li>
+<li>throw后面跟的是对象。格式 throw new 异常类名（参数）</li>
+</ul>
+</li>
+<li>联系<ul>
+<li>有throws不一定有throw</li>
+<li>有throw一定有throws</li>
+</ul>
+</li>
+</ul>
+<h5 id="Exception的分类"><a href="#Exception的分类" class="headerlink" title="Exception的分类"></a>Exception的分类</h5><ul>
+<li>Exception：这种类型的异常，如果抛出，在编译的时候就会检查，此类异常需要编写针对性的处理代码进行处理。</li>
+<li>RuntimeException：这种类型的异常，如果抛出，在编译的时候不检查，运行的时候直接处理，这种异常必须通过修改代码才能解决，所以一般针对这种异常，我们不处理，jvm处理。</li>
+</ul>
+<h5 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h5><ul>
+<li>继承自Exceptioin或者RunException必须的</li>
+<li>在自定义异常里面，提供一个带参构造。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>&#123;</span><br><span class="line">    MyException()&#123;&#125;</span><br><span class="line">    MyException(String message)&#123;</span><br><span class="line">        <span class="keyword">super</span>(message);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="测试题"><a href="#测试题" class="headerlink" title="测试题"></a>测试题</h4><p> <strong>char</strong> <strong>型变量中能不能存贮一个中文汉字？为什么？</strong> </p>
+<p>答：char 型变量是用来存储 Unicode 编码的字符的，unicode 编码字符集中包含了汉字， </p>
+<p>所以，char 型变量中当然可以存储汉字。不过，如果某个特殊的汉字没有被包含在 unicode 编码字符集中，那么，这个 char 型变量中就不能存储这个特殊汉字。(unicode 编码占用两个 </p>
+<p>字节，所以，char 类型的变量也是占用两个字节。)  <strong>静态变量和实例变量的区别？</strong> </p>
+<p>(1)作用范围 </p>
+<p>A：静态变量随着类的加载而加载，随着类的消失而消失。生命周期最长。 </p>
+<p>B：实例变量随着类的创建而加载，对象消失，实例变量消失。 </p>
+<p>(2)存储空间 </p>
+<p>A：静态变量存储在方法区中的静态区，被所有实例共享。 </p>
+<p>B：实例变量存储在堆内存中，只被某一个对象所特有。 </p>
+<p>(3)调用方式 </p>
+<p>A：静态变量既可以通过对象名调用，也可以通过类名直接调用。 </p>
+<p>B：实例变量只能通过对象名调用。 </p>
+<p> <strong>abstract class</strong> <strong>和</strong> <strong>interface</strong> <strong>有什么区别？</strong> </p>
+<p>答: A：抽象类只能单继承,接口可以多实现。 </p>
+<p>B：抽象类中可以有非抽象方法,抽象类中可以定义变量和常量。接口中的方法都是抽象的。 </p>
+<p>接口中只能有静态常量。接口中的方法都有默认修饰符：public abstract 接口中的成员变 </p>
+<p>量都有默认修饰符：public static final </p>
+<p>C：抽象类中定义的是一个体系的共性功能,接口中通常定义的对象中的扩展功能。 </p>
+<p>D：接口的出出现避免了单继承的局限性。 </p>
+<p>E：抽象类被继承表示的是：is a 的关系。叫做：xx 是 yy 的一种。接口被实现表示的是： </p>
+<p>like a 的关系。叫做：xx 像 yy 一种。 </p>
+<p> <strong>面向对象的特性有哪些，分别阐述说明？</strong> </p>
+<p>(1)抽象：抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前 </p>
+<p>目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。 </p>
+<p>抽象包括两个方面，一是过程(行为)抽象，二是数据(属性)抽象。 </p>
+<p>(2)继承：继承是一种层次模型，允许和鼓励类的重用，它提供了一种明确表述共性的方法。 </p>
+<p>对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类62 </p>
+<p>称为原始类的派生类（子类），而原始类称为新类的基类（父类）。派生类可以从它的基类那里继 </p>
+<p>承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。 </p>
+<p>(3)封装：封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象 </p>
+<p>计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过 </p>
+<p>一个受保护的接口访问其他对象。 </p>
+<p>(4)多态性：多态性是指允许不同类的对象对同一消息作出响应。多态性包括参数化多态性 </p>
+<p>(重载)和对象多态性(子父类的重写)。多态性语言具有灵活、抽象、行为共享、代码共享的优 </p>
+<p>势，很好的解决了应用程序方法同名问题。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href target="_blank">xtslife</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2019/05/22/hexo发布文章五步曲/" class="next-post btn btn-default" title="hexo发布文章五步曲">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">hexo发布文章五步曲</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#环境变量path和classpath的作用是什么？"><span class="toc-text">环境变量path和classpath的作用是什么？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基本数据类型"><span class="toc-text">基本数据类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数据类型的转换"><span class="toc-text">数据类型的转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#位运算符"><span class="toc-text">位运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#switch-用于定义选择结构范围："><span class="toc-text">switch 用于定义选择结构范围：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何自定义函数？"><span class="toc-text">如何自定义函数？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的重载？"><span class="toc-text">函数的重载？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#选择排序："><span class="toc-text">选择排序：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#冒泡排序"><span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#成员变量和局部变量的区别"><span class="toc-text">成员变量和局部变量的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#构造方法"><span class="toc-text">构造方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#this的三种使用场景"><span class="toc-text">this的三种使用场景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内存图"><span class="toc-text">内存图</span></a></li></ol><li class="toc-item toc-level-4"><a class="toc-link" href="#代码块"><span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#static"><span class="toc-text">static</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#静态变量和非静态变量的区别"><span class="toc-text">静态变量和非静态变量的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在IDEA中怎么制作帮助文档"><span class="toc-text">在IDEA中怎么制作帮助文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单例设计模式"><span class="toc-text">单例设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#特点："><span class="toc-text">特点：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#继承后的Fu和Zi的关系"><span class="toc-text">继承后的Fu和Zi的关系</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重写和重载的方法"><span class="toc-text">重写和重载的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#final"><span class="toc-text">final</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象方法"><span class="toc-text">抽象方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口和抽象类的区别？—都是不断向上抽取出来的"><span class="toc-text">接口和抽象类的区别？—都是不断向上抽取出来的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多态"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异常"><span class="toc-text">异常</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#throws-throw抛出"><span class="toc-text">throws,throw抛出</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Exception的分类"><span class="toc-text">Exception的分类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自定义异常"><span class="toc-text">自定义异常</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试题"><span class="toc-text">测试题</span></a>
+        
+    </li></ol></li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script src="/assets/tagcanvas.min.js?rev=2.9"></script>
+    <script>
+        var tagOption = {
+            textColour: '#444', // 字体颜色
+            outlineMethod: 'block', // 选中模式
+            outlineColour: '#FFDAB9', // 选中模式的颜色
+            interval: 25 || 30, // 动画帧之间的时间间隔，值越大，转动幅度越大
+            textHeight: 13,
+            outlineRadius: 3,
+            freezeActive: true || '', // 选中的标签是否继续滚动
+            frontSelect: true || '', // 不选标签云后部的标签
+            initial: [0.1, -0.1],
+            depth: 0.5,
+            decel: 0.95,
+            maxSpeed: 0.03,
+            reverse: true || '', // 是否反向触发
+            fadeIn: 500, // 进入动画时间
+            wheelZoom: false || '' // 是否启用鼠标滚轮
+        }
+        TagCanvas.Start('tag-cloud-3d','',tagOption);
+    </script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
